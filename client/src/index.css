@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    background-color: #0A0A0C;
+    color: #ECEAE4;
+    overflow-x: hidden;
+  }
+
+  /* Custom luxury scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #0A0A0C;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #2A261F;
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #C5A059;
+  }
+}
+
+@layer utilities {
+  .gold-gradient-text {
+    background: linear-gradient(135deg, #FFF0D0 0%, #E6C87C 30%, #C5A059 70%, #9A7736 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .gold-metallic-text {
+    background: linear-gradient(180deg, #F8E7C5 0%, #D4AF37 50%, #A58032 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .gold-border-gradient {
+    border-image: linear-gradient(to right, rgba(197, 160, 89, 0.4), rgba(197, 160, 89, 0.05)) 1;
+  }
+
+  .gold-glow-subtle {
+    box-shadow: 0 0 35px -5px rgba(197, 160, 89, 0.15);
+  }
+}
+
+/* Subtle luxury backdrop effects */
+.bg-radial-luxury {
+  background: radial-gradient(circle at 50% 20%, rgba(197, 160, 89, 0.08) 0%, rgba(10, 10, 12, 0) 70%);
+}
+
+.bg-radial-hero {
+  background: radial-gradient(circle at 65% 35%, rgba(197, 160, 89, 0.12) 0%, rgba(10, 10, 12, 0.95) 75%);
+}
