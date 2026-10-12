@@ -1,21 +1,22 @@
 import React from 'react';
 import { ChevronDown, Sparkles } from 'lucide-react';
-import heroPalaceImg from '../assets/hero-palace.jpg';
+import heroPalaceHdImg from '../assets/hero-palace-hd.jpg';
 
 export const Hero = ({ onRequestInvitation, onExploreSalons }) => {
   return (
     <section className="relative min-h-[96vh] flex items-center justify-start overflow-hidden pt-28 pb-20">
-      {/* Opulent Royal Palace Dusk/Night Background Image */}
+      {/* 2.5K Razor-Sharp Royal Palace Dusk/Night Background Image */}
       <div className="absolute inset-0 z-0">
         <img
-          src={heroPalaceImg || '/hero-palace.jpg'}
+          src={heroPalaceHdImg || '/hero-palace-hd.jpg'}
           alt="Royal Palace illuminated at twilight with grand sovereign courtyard gathering"
-          className="w-full h-full object-cover object-center scale-105 transform duration-1000 ease-out"
+          className="w-full h-full object-cover object-right md:object-center"
+          style={{ imageRendering: 'auto' }}
         />
-        {/* Layered luxury gradient masks: ensures high typography contrast on left while keeping palace facade visible on right */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0A0A0C] via-[#0A0A0C]/75 to-black/40"></div>
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0C] via-transparent to-black/70"></div>
-        <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-transparent to-[#0A0A0C]"></div>
+        {/* Refined gradient mask: High contrast on left for typography, pure crystal clarity on right for the illuminated palace */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0A0A0C] via-[#0A0A0C]/70 via-35% to-black/25"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0C] via-transparent via-25% to-black/60"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-transparent to-transparent"></div>
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 w-full">
@@ -30,7 +31,7 @@ export const Hero = ({ onRequestInvitation, onExploreSalons }) => {
           </div>
 
           {/* Main Headline */}
-          <h1 className="font-serif text-4xl sm:text-6xl lg:text-7xl font-normal leading-[1.08] text-white tracking-tight">
+          <h1 className="font-serif text-4xl sm:text-6xl lg:text-7xl font-normal leading-[1.08] text-white tracking-tight drop-shadow-lg">
             THE RIGHT ROOM <br />
             <span className="gold-gradient-text italic font-normal">
               CHANGES EVERYTHING.
@@ -38,13 +39,13 @@ export const Hero = ({ onRequestInvitation, onExploreSalons }) => {
           </h1>
 
           {/* Body Paragraph */}
-          <p className="text-zinc-200 text-sm sm:text-base md:text-lg font-light leading-relaxed max-w-xl drop-shadow-sm">
+          <p className="text-zinc-200 text-sm sm:text-base md:text-lg font-light leading-relaxed max-w-xl drop-shadow-md">
             Where sovereign capital, timeless heritage, and discrete fellowship converge beyond the public gaze.
           </p>
 
           {/* Date & Location Pill */}
           <div className="pt-1">
-            <p className="text-xs sm:text-sm uppercase tracking-[0.22em] text-gold font-medium">
+            <p className="text-xs sm:text-sm uppercase tracking-[0.22em] text-gold font-medium drop-shadow-sm">
               JAIPUR · NOVEMBER 14–16, 2025
             </p>
           </div>
@@ -59,7 +60,7 @@ export const Hero = ({ onRequestInvitation, onExploreSalons }) => {
             </button>
             <button
               onClick={onExploreSalons}
-              className="border border-gold/40 hover:border-gold text-zinc-200 hover:text-gold px-7 py-3.5 text-xs uppercase tracking-[0.24em] font-medium transition-all duration-300 backdrop-blur-sm bg-black/40 text-center"
+              className="border border-gold/50 hover:border-gold text-zinc-100 hover:text-gold px-7 py-3.5 text-xs uppercase tracking-[0.24em] font-medium transition-all duration-300 backdrop-blur-md bg-black/40 text-center"
             >
               Explore The Salon
             </button>
@@ -77,8 +78,8 @@ export const Hero = ({ onRequestInvitation, onExploreSalons }) => {
       </div>
 
       {/* Royal Sanctuary Badge (Bottom Right) */}
-      <div className="absolute bottom-8 right-8 hidden lg:flex items-center gap-2 z-10 text-zinc-400/80 text-[10px] tracking-widest uppercase font-mono bg-black/40 px-3 py-1.5 border border-white/5 backdrop-blur-sm">
-        <span className="w-1.5 h-1.5 rounded-full bg-gold"></span>
+      <div className="absolute bottom-8 right-8 hidden lg:flex items-center gap-2 z-10 text-zinc-300 text-[10px] tracking-widest uppercase font-mono bg-black/60 px-3.5 py-1.5 border border-gold/30 backdrop-blur-md">
+        <span className="w-1.5 h-1.5 rounded-full bg-gold animate-pulse"></span>
         <span>The Sovereign Palace Sanctuary</span>
       </div>
     </section>

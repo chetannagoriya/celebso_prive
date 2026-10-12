@@ -4,8 +4,7 @@ import heroLakesideHd from '../assets/hero-lakeside-hd.jpg';
 import novotelJaipurImg from '../assets/novotel-jaipur.jpg';
 import pullmanDelhiImg from '../assets/pullman-delhi.jpg';
 import udaipurLakePalaceImg from '../assets/udaipur-lake-palace.jpg';
-import tajMumbaiImg from '../assets/taj-mumbai.jpg';
-import cardDubaiHd from '../assets/card-dubai-hd.jpg';
+import dubaiBurjAlArabImg from '../assets/dubai-burj-al-arab.jpg';
 
 export const GatheringsPage = ({ onNavigate, onRequestInvitation }) => {
   const [selectedFilter, setSelectedFilter] = useState('ALL GATHERINGS');
@@ -19,7 +18,6 @@ export const GatheringsPage = ({ onNavigate, onRequestInvitation }) => {
     'JAIPUR',
     'DELHI',
     'UDAIPUR',
-    'MUMBAI',
     'DUBAI',
   ];
 
@@ -73,22 +71,6 @@ export const GatheringsPage = ({ onNavigate, onRequestInvitation }) => {
       highlights: ['Lakeside Starlight Terrace', 'Generational Succession Round', 'Private Royal Escort'],
     },
     {
-      id: 'mumbai-salon',
-      title: 'MUMBAI SOVEREIGN SALON',
-      tag: 'PAST',
-      date: '14 AUGUST 2026',
-      dateSort: '2026-08-14',
-      location: 'THE TAJ MAHAL PALACE, MUMBAI',
-      city: 'MUMBAI',
-      time: '7:00 PM – 11:00 PM',
-      eventType: 'PRIVATE EVENT',
-      capacity: 'Concluded Gathering',
-      image: tajMumbaiImg || '/taj-mumbai.jpg',
-      isUpcoming: false,
-      description: 'A private heritage conclave focusing on maritime capital, industrial dynasties, and private equity syndicate allocations.',
-      highlights: ['Maritime Heritage Hall', 'Cross-Border Co-Investment', 'Closed Dossier Transcripts'],
-    },
-    {
       id: 'dubai-citadel',
       title: 'THE EMIRATES SOVEREIGN CITADEL',
       tag: 'UPCOMING',
@@ -99,24 +81,39 @@ export const GatheringsPage = ({ onNavigate, onRequestInvitation }) => {
       time: '6:30 PM – 10:00 PM',
       eventType: 'PRIVATE EVENT',
       capacity: 'Strict 26 Principals Cap',
-      image: cardDubaiHd || '/card-dubai-hd.jpg',
+      image: dubaiBurjAlArabImg || '/dubai-burj-al-arab.jpg',
       isUpcoming: true,
       description: 'High-level dialogue between GCC sovereign wealth principals, AI infrastructure titans, and legacy family offices.',
       highlights: ['Skyline Sky Suite Ingress', 'Sovereign Compute & Energy Round', 'Desert Dune Majlis'],
     },
+    {
+      id: 'inaugural-palace-assembly',
+      title: 'THE INAUGURAL SOVEREIGN ASSEMBLY',
+      tag: 'CONCLUDED',
+      date: '15 NOVEMBER 2025',
+      dateSort: '2025-11-15',
+      location: 'RAMBAGH PALACE, JAIPUR',
+      city: 'JAIPUR',
+      time: 'CONCLUDED SALON',
+      eventType: 'ARCHIVED CONCLAVE',
+      capacity: '30 Principals Convened',
+      image: 'https://images.unsplash.com/photo-1544644181-1484b3fdfc62?auto=format&fit=crop&w=1200&q=85',
+      isUpcoming: false,
+      description: 'The inaugural foundation assembly where the charter and private fellowship codes of Celebso Privé were ratified.',
+      highlights: ['Charter Ratification', 'Founding Circle Protocol', 'Archived Transcripts'],
+    },
   ];
 
-  // Filtering
+  // Filtering: "ALL GATHERINGS" strictly displays ONLY upcoming gatherings (past excluded)
   const filtered = allGatherings.filter((item) => {
-    if (selectedFilter === 'ALL GATHERINGS') return true;
+    if (selectedFilter === 'ALL GATHERINGS') return item.isUpcoming;
     if (selectedFilter === 'UPCOMING') return item.isUpcoming;
     if (selectedFilter === 'PAST') return !item.isUpcoming;
-    if (selectedFilter === 'JAIPUR') return item.city === 'JAIPUR';
-    if (selectedFilter === 'DELHI') return item.city === 'DELHI';
-    if (selectedFilter === 'UDAIPUR') return item.city === 'UDAIPUR';
-    if (selectedFilter === 'MUMBAI') return item.city === 'MUMBAI';
-    if (selectedFilter === 'DUBAI') return item.city === 'DUBAI';
-    return true;
+    if (selectedFilter === 'JAIPUR') return item.city === 'JAIPUR' && item.isUpcoming;
+    if (selectedFilter === 'DELHI') return item.city === 'DELHI' && item.isUpcoming;
+    if (selectedFilter === 'UDAIPUR') return item.city === 'UDAIPUR' && item.isUpcoming;
+    if (selectedFilter === 'DUBAI') return item.city === 'DUBAI' && item.isUpcoming;
+    return item.isUpcoming;
   });
 
   // Sorting
@@ -246,7 +243,7 @@ export const GatheringsPage = ({ onNavigate, onRequestInvitation }) => {
         <div className="flex items-center justify-center gap-4 mb-14 text-gold">
           <div className="w-8 sm:w-16 h-[1px] bg-gold/50"></div>
           <span className="text-[10px] sm:text-[11px] uppercase tracking-[0.35em] font-serif text-gold font-medium">
-            ✦ · ✦ &nbsp; UPCOMING GATHERINGS &nbsp; ✦ · ✦
+            ✦ · ✦ &nbsp; {selectedFilter === 'PAST' ? 'ARCHIVED PAST CONCLAVES' : 'UPCOMING GATHERINGS'} &nbsp; ✦ · ✦
           </span>
           <div className="w-8 sm:w-16 h-[1px] bg-gold/50"></div>
         </div>
@@ -456,7 +453,6 @@ export const GatheringsPage = ({ onNavigate, onRequestInvitation }) => {
                 <li>JAIPUR</li>
                 <li>DELHI</li>
                 <li>UDAIPUR</li>
-                <li>MUMBAI</li>
                 <li>DUBAI</li>
               </ul>
             </div>
