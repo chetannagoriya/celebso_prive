@@ -43,10 +43,10 @@ export const Footer = ({
             </p>
             <div className="flex flex-wrap gap-2 sm:gap-3">
               <button
-                onClick={() => handleLink('gathering-detail')}
+                onClick={() => handleLink('gallery')}
                 className="px-3.5 py-1.5 border border-gold/40 hover:border-gold bg-gold/5 text-gold text-xs uppercase tracking-wider transition-all"
               >
-                ✦ Gathering Detail
+                ✦ Gallery
               </button>
               <button
                 onClick={() => handleLink('experiences')}
@@ -113,7 +113,7 @@ export const Footer = ({
                 Chapters & Salons
               </p>
               <p className="text-xs tracking-widest text-zinc-300 font-mono">
-                JAIPUR · DUBAI / ABU DHABI · LONDON · ZURICH · DOHA
+                JAIPUR · NEW DELHI · UDAIPUR · GURGAON · MUMBAI
               </p>
             </div>
           </div>
@@ -175,15 +175,6 @@ export const Footer = ({
               </li>
               <li>
                 <button
-                  onClick={() => handleLink('gathering-detail')}
-                  className="hover:text-gold transition-colors text-left flex items-center gap-1.5"
-                >
-                  <span className="text-gold">•</span>
-                  <span>Gathering Detail (Amber Fort)</span>
-                </button>
-              </li>
-              <li>
-                <button
                   onClick={() => handleLink('experiences')}
                   className="hover:text-gold transition-colors text-left flex items-center gap-1.5"
                 >
@@ -198,6 +189,15 @@ export const Footer = ({
                 >
                   <span className="text-gold">•</span>
                   <span>Past Guests & Chronicles</span>
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={() => handleLink('gallery')}
+                  className="hover:text-gold transition-colors text-left flex items-center gap-1.5"
+                >
+                  <span className="text-gold">•</span>
+                  <span>Gallery</span>
                 </button>
               </li>
             </ul>
@@ -244,6 +244,15 @@ export const Footer = ({
                   <span>Contact Secretariats</span>
                 </button>
               </li>
+              <li>
+                <button
+                  onClick={() => handleLink('privacy-policy')}
+                  className="hover:text-gold transition-colors text-left flex items-center gap-1.5"
+                >
+                  <span className="text-gold">•</span>
+                  <span>Privacy Policy & Terms</span>
+                </button>
+              </li>
               <li className="pt-2">
                 <button
                   onClick={onOpenDashboard}
@@ -259,9 +268,18 @@ export const Footer = ({
 
         {/* Bottom Rights Bar */}
         <div className="pt-8 flex flex-col md:flex-row items-center justify-between text-[10px] tracking-wider text-zinc-500 gap-4">
-          <p>© 2025–2026 CELEBSO PRIVÉ ALLIANCE LTD. ALL RIGHTS RESERVED.</p>
+          <div className="flex flex-wrap items-center gap-3 text-center sm:text-left">
+            <p>© Created by Celebso Group, a Celebso Privé initiative. All rights reserved.</p>
+            <span className="text-zinc-700">·</span>
+            <button
+              onClick={() => handleLink('privacy-policy')}
+              className="text-zinc-400 hover:text-gold underline underline-offset-2 transition-colors uppercase tracking-widest text-[9px]"
+            >
+              Privacy Policy
+            </button>
+          </div>
           <p className="text-center md:text-right">
-            Strictly Private & Confidential · Entry subject to protocol clearance · concierge@celebso.com
+            Strictly Private & Confidential · Entry subject to protocol clearance · info@celebso.com
           </p>
         </div>
       </div>

@@ -18,16 +18,17 @@ export const Navbar = ({
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // The 5 main navigation links for the header, as requested:
+  // Main navigation links for the header:
   const headerNavItems = [
     { id: 'home', label: 'HOME' },
     { id: 'gatherings', label: 'GATHERINGS' },
     { id: 'the-prive', label: 'THE PRIVÉ' },
     { id: 'the-room', label: 'THE ROOM' },
     { id: 'ecosystem', label: 'ECOSYSTEM' },
+    { id: 'gallery', label: 'GALLERY' },
   ];
 
-  // All 12 pages for the drawer menu
+  // All pages for the drawer menu
   const allPages = [
     { id: 'home', label: 'HOME', category: 'The Sanctum', desc: 'Sovereign fellowship & heritage convergence' },
     { id: 'gatherings', label: 'GATHERINGS', category: 'Conclaves', desc: 'Curated conclaves across historic sanctums' },
@@ -36,6 +37,7 @@ export const Navbar = ({
     { id: 'the-room', label: 'THE ROOM', category: 'The Sanctum', desc: 'The 30-seat non-hierarchical round' },
     { id: 'experiences', label: 'EXPERIENCES', category: 'Conclaves', desc: 'Palace soirees, midnight hearths & private jets' },
     { id: 'ecosystem', label: 'ECOSYSTEM', category: 'Alliances', desc: 'Sovereign wealth funds & deep tech network' },
+    { id: 'gallery', label: 'GALLERY', category: 'The Sanctum', desc: 'Visual chronicle of sovereign salons & conclaves' },
     { id: 'partners-trust', label: 'PARTNERS & TRUST', category: 'Alliances', desc: 'Institutional patronage & anti-sponsorship ethos' },
     { id: 'request-invitation', label: 'REQUEST INVITATION', category: 'Access', desc: 'Confidential petition for seat inclusion' },
     { id: 'contact', label: 'CONTACT', category: 'Access', desc: 'Global chapter desks & encrypted dispatch' },

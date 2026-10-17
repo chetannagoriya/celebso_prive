@@ -1,12 +1,9 @@
 import React, { useState } from 'react';
 import { MapPin, Clock, ArrowRight, ChevronDown, Sparkles, Shield, Users, Check } from 'lucide-react';
 import heroLakesideHd from '../assets/hero-lakeside-hd.jpg';
-import novotelJaipurImg from '../assets/novotel-jaipur.jpg';
-import pullmanDelhiImg from '../assets/pullman-delhi.jpg';
-import udaipurLakePalaceImg from '../assets/udaipur-lake-palace.jpg';
-import dubaiBurjAlArabImg from '../assets/dubai-burj-al-arab.jpg';
+import { allGatherings } from '../data/gatheringsData';
 
-export const GatheringsPage = ({ onNavigate, onRequestInvitation }) => {
+export const GatheringsPage = ({ onNavigate, onRequestInvitation, onSelectGathering }) => {
   const [selectedFilter, setSelectedFilter] = useState('ALL GATHERINGS');
   const [sortBy, setSortBy] = useState('DATE_ASC');
   const [sortOpen, setSortOpen] = useState(false);
@@ -19,89 +16,6 @@ export const GatheringsPage = ({ onNavigate, onRequestInvitation }) => {
     'DELHI',
     'UDAIPUR',
     'DUBAI',
-  ];
-
-  const allGatherings = [
-    {
-      id: 'founder-circle',
-      title: 'CELEBSO FOUNDER CIRCLE',
-      tag: 'UPCOMING',
-      date: '18 OCTOBER 2026',
-      dateSort: '2026-10-18',
-      location: 'NOVOTEL JAIPUR CONVENTION CENTRE',
-      city: 'JAIPUR',
-      time: '6:00 PM – 8:00 PM',
-      eventType: 'PRIVATE EVENT',
-      capacity: 'Strict 30 Principals Cap',
-      image: novotelJaipurImg || '/novotel-jaipur.jpg',
-      isUpcoming: true,
-      description: 'An intimate convening of visionary founders and sovereign capital allocators seated in the premier Novotel Jaipur convention sanctuary.',
-      highlights: ['Torchlit Courtyard Arrival', 'The Sovereign Round Table', 'Private Banquet Repast'],
-    },
-    {
-      id: 'celebso-prive-delhi',
-      title: 'CELEBSO PRIVÉ',
-      tag: 'UPCOMING',
-      date: '25 NOVEMBER 2026',
-      dateSort: '2026-11-25',
-      location: 'PULLMAN NEW DELHI AEROCITY',
-      city: 'DELHI',
-      time: '7:00 PM – 10:30 PM',
-      eventType: 'PRIVATE EVENT',
-      capacity: 'Strict 24 Principals Cap',
-      image: pullmanDelhiImg || '/pullman-delhi.jpg',
-      isUpcoming: true,
-      description: 'Candlelit dining and closed-door dialectics in an executive private chamber overlooking the capital city skyline.',
-      highlights: ['Chatham House Dialogue', 'Macro Liquidity Briefing', 'Rare Vintage Cellar'],
-    },
-    {
-      id: 'udaipur-retreat',
-      title: 'UDAIPUR PRIVATE RETREAT',
-      tag: 'UPCOMING',
-      date: 'JANUARY 2027',
-      dateSort: '2027-01-15',
-      location: 'UDAIPUR, RAJASTHAN',
-      city: 'UDAIPUR',
-      time: '3-DAY SOVEREIGN RETREAT',
-      eventType: 'PRIVATE EVENT',
-      capacity: 'Strict 20 Principals Cap',
-      image: udaipurLakePalaceImg || '/udaipur-lake-palace.jpg',
-      isUpcoming: true,
-      description: 'A multi-day lakeside palace retreat set against illuminated heritage domes and moonlit lake reflections.',
-      highlights: ['Lakeside Starlight Terrace', 'Generational Succession Round', 'Private Royal Escort'],
-    },
-    {
-      id: 'dubai-citadel',
-      title: 'THE EMIRATES SOVEREIGN CITADEL',
-      tag: 'UPCOMING',
-      date: 'FEBRUARY 2027',
-      dateSort: '2027-02-20',
-      location: 'BURJ AL ARAB PRIVATE PAVILION, DUBAI',
-      city: 'DUBAI',
-      time: '6:30 PM – 10:00 PM',
-      eventType: 'PRIVATE EVENT',
-      capacity: 'Strict 26 Principals Cap',
-      image: dubaiBurjAlArabImg || '/dubai-burj-al-arab.jpg',
-      isUpcoming: true,
-      description: 'High-level dialogue between GCC sovereign wealth principals, AI infrastructure titans, and legacy family offices.',
-      highlights: ['Skyline Sky Suite Ingress', 'Sovereign Compute & Energy Round', 'Desert Dune Majlis'],
-    },
-    {
-      id: 'inaugural-palace-assembly',
-      title: 'THE INAUGURAL SOVEREIGN ASSEMBLY',
-      tag: 'CONCLUDED',
-      date: '15 NOVEMBER 2025',
-      dateSort: '2025-11-15',
-      location: 'RAMBAGH PALACE, JAIPUR',
-      city: 'JAIPUR',
-      time: 'CONCLUDED SALON',
-      eventType: 'ARCHIVED CONCLAVE',
-      capacity: '30 Principals Convened',
-      image: 'https://images.unsplash.com/photo-1544644181-1484b3fdfc62?auto=format&fit=crop&w=1200&q=85',
-      isUpcoming: false,
-      description: 'The inaugural foundation assembly where the charter and private fellowship codes of Celebso Privé were ratified.',
-      highlights: ['Charter Ratification', 'Founding Circle Protocol', 'Archived Transcripts'],
-    },
   ];
 
   // Filtering: "ALL GATHERINGS" strictly displays ONLY upcoming gatherings (past excluded)
@@ -292,9 +206,16 @@ export const GatheringsPage = ({ onNavigate, onRequestInvitation }) => {
                         <span className="text-[10px] font-mono tracking-[0.25em] uppercase text-gold font-semibold">
                           {item.tag}
                         </span>
-                        <span className="text-[10px] font-mono tracking-wider text-zinc-500 uppercase">
-                          {item.capacity}
-                        </span>
+                        <div className="text-[10px] font-mono tracking-wider uppercase">
+                          {item.isUpcoming && item.remainingSeats ? (
+                            <span className="text-amber-400 flex items-center gap-1.5 font-semibold">
+                              <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse"></span>
+                              <span>{item.remainingSeats} SEATS LEFT</span>
+                            </span>
+                          ) : (
+                            <span className="text-zinc-500">{item.capacity}</span>
+                          )}
+                        </div>
                       </div>
 
                       {/* Date */}
@@ -334,13 +255,18 @@ export const GatheringsPage = ({ onNavigate, onRequestInvitation }) => {
                         <span>{item.eventType}</span>
                       </div>
 
-                      <button
-                        onClick={() => onNavigate('gathering-detail')}
-                        className="border border-gold/60 hover:border-gold text-gold hover:bg-gold hover:text-black px-4 sm:px-6 py-2.5 text-[10px] sm:text-[11px] uppercase tracking-[0.22em] font-medium transition-all duration-300 flex items-center gap-2 shadow-sm whitespace-nowrap group/btn"
-                      >
-                        <span>VIEW GATHERING</span>
-                        <ArrowRight className="w-3.5 h-3.5 group-hover/btn:translate-x-1 transition-transform" />
-                      </button>
+                      <div className="flex items-center gap-2 sm:gap-3">
+                        <button
+                          onClick={() => {
+                            if (onSelectGathering) onSelectGathering(item.id);
+                            onNavigate('gathering-detail', item.id);
+                          }}
+                          className="border border-gold/70 hover:border-gold text-gold hover:bg-gold hover:text-black px-4 sm:px-6 py-2.5 text-[10px] sm:text-[11px] uppercase tracking-[0.22em] font-medium transition-all duration-300 flex items-center gap-2 shadow-sm whitespace-nowrap group/btn"
+                        >
+                          <span>VIEW GATHERING</span>
+                          <ArrowRight className="w-3.5 h-3.5 group-hover/btn:translate-x-1 transition-transform" />
+                        </button>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -385,90 +311,6 @@ export const GatheringsPage = ({ onNavigate, onRequestInvitation }) => {
           </button>
         </div>
       </section>
-
-      {/* 5. Clean Editorial Footer (Matching Bottom of Screenshot) */}
-      <footer className="border-t border-white/10 bg-[#070709] pt-16 pb-12 text-zinc-400">
-        <div className="max-w-7xl mx-auto px-6 sm:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-6 gap-8 pb-12 border-b border-white/5 text-xs">
-            {/* Brand Col */}
-            <div className="col-span-2 space-y-3">
-              <div className="flex flex-col">
-                <span className="font-serif text-lg tracking-[0.22em] text-white font-medium">
-                  CELEBSO PRIVÉ
-                </span>
-              </div>
-              <p className="text-[11px] tracking-wider uppercase text-zinc-400 font-light">
-                PRIVATE GATHERINGS. <br />
-                EXCEPTIONAL PEOPLE.
-              </p>
-            </div>
-
-            {/* Navigation */}
-            <div className="space-y-3">
-              <h5 className="text-[10px] uppercase tracking-[0.25em] text-white font-semibold">
-                NAVIGATION
-              </h5>
-              <ul className="space-y-2 text-[11px] uppercase tracking-wider text-zinc-400">
-                <li><button onClick={() => onNavigate('home')} className="hover:text-gold transition-colors">HOME</button></li>
-                <li><button onClick={() => onNavigate('gatherings')} className="text-gold">GATHERINGS</button></li>
-                <li><button onClick={() => onNavigate('the-prive')} className="hover:text-gold transition-colors">THE PRIVÉ</button></li>
-                <li><button onClick={() => onNavigate('the-room')} className="hover:text-gold transition-colors">THE ROOM</button></li>
-                <li><button onClick={() => onNavigate('ecosystem')} className="hover:text-gold transition-colors">ECOSYSTEM</button></li>
-              </ul>
-            </div>
-
-            {/* Gatherings */}
-            <div className="space-y-3">
-              <h5 className="text-[10px] uppercase tracking-[0.25em] text-white font-semibold">
-                GATHERINGS
-              </h5>
-              <ul className="space-y-2 text-[11px] uppercase tracking-wider text-zinc-400">
-                <li><button onClick={() => setSelectedFilter('UPCOMING')} className="hover:text-gold transition-colors">UPCOMING</button></li>
-                <li><button onClick={() => setSelectedFilter('PAST')} className="hover:text-gold transition-colors">PAST</button></li>
-                <li><button onClick={() => setSelectedFilter('JAIPUR')} className="hover:text-gold transition-colors">JAIPUR</button></li>
-                <li><button onClick={() => setSelectedFilter('DELHI')} className="hover:text-gold transition-colors">DELHI</button></li>
-                <li><button onClick={() => setSelectedFilter('UDAIPUR')} className="hover:text-gold transition-colors">UDAIPUR</button></li>
-              </ul>
-            </div>
-
-            {/* Resources */}
-            <div className="space-y-3">
-              <h5 className="text-[10px] uppercase tracking-[0.25em] text-white font-semibold">
-                RESOURCES
-              </h5>
-              <ul className="space-y-2 text-[11px] uppercase tracking-wider text-zinc-400">
-                <li><button onClick={() => onNavigate('partners-trust')} className="hover:text-gold transition-colors">PARTNERS</button></li>
-                <li><button onClick={() => onNavigate('past-guests')} className="hover:text-gold transition-colors">ARCHIVE</button></li>
-                <li><button onClick={() => onNavigate('contact')} className="hover:text-gold transition-colors">CONTACT</button></li>
-                <li><button onClick={() => onNavigate('request-invitation')} className="hover:text-gold transition-colors text-gold">REQUEST INVITATION</button></li>
-              </ul>
-            </div>
-
-            {/* Locations */}
-            <div className="space-y-3">
-              <h5 className="text-[10px] uppercase tracking-[0.25em] text-white font-semibold">
-                LOCATIONS
-              </h5>
-              <ul className="space-y-1.5 text-[11px] uppercase tracking-wider text-zinc-400">
-                <li>JAIPUR</li>
-                <li>DELHI</li>
-                <li>UDAIPUR</li>
-                <li>DUBAI</li>
-              </ul>
-            </div>
-          </div>
-
-          {/* Bottom Line */}
-          <div className="pt-8 flex flex-col md:flex-row items-center justify-between text-[10px] tracking-wider text-zinc-500 gap-4">
-            <p>© 2026 Celebso Privé. All rights reserved.</p>
-            <div className="flex gap-4">
-              <span className="hover:text-zinc-300 cursor-pointer">Privacy Policy</span>
-              <span>|</span>
-              <span className="hover:text-zinc-300 cursor-pointer">Terms & Conditions</span>
-            </div>
-          </div>
-        </div>
-      </footer>
     </div>
   );
 };

@@ -1,18 +1,20 @@
 import React from 'react';
 import { ArrowRight, Compass, Shield, Award, Castle, Feather } from 'lucide-react';
+import equestrianImg from '../assets/equestrian-tradition.jpg';
+import royalHospitalityImg from '../assets/royal-hospitality.jpg';
 
 export const DimensionsConvergence = ({ onOpenProcess }) => {
   const dimensions = [
     {
       title: 'EQUESTRIAN TRADITION',
       subtitle: 'Royal Polo & Heritage Stables',
-      image: 'https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=600&q=80',
+      image: equestrianImg || '/equestrian-tradition.jpg',
       icon: Award,
     },
     {
       title: 'ROYAL HOSPITALITY',
       subtitle: 'Imperial Custodian Service',
-      image: 'https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=600&q=80',
+      image: royalHospitalityImg || '/royal-hospitality.jpg',
       icon: Castle,
     },
     {

@@ -1,5 +1,6 @@
 import React from 'react';
 import { ArrowRight, Utensils, Users, Sparkles } from 'lucide-react';
+import roundtableImg from '../assets/the-roundtable.jpg';
 
 export const BespokeSalons = ({ onRequestInvitation }) => {
   const salons = [
@@ -16,7 +17,7 @@ export const BespokeSalons = ({ onRequestInvitation }) => {
       tag: 'DISCOURSE · PRIVACY',
       description:
         'Chatham House discussions on sovereign capital, legacy, and multi-generational stewardship among global family office principals.',
-      image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80',
+      image: roundtableImg || '/the-roundtable.jpg',
       icon: Users,
     },
     {

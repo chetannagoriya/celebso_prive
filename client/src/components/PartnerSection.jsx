@@ -8,6 +8,7 @@ export const PartnerSection = ({ onOpenPartnerModal }) => {
       title: 'The Patron',
       desc: 'Patrons who wish to host a bespoke salon or dedicate an inaugural chapter under our stewardship.',
       action: 'BECOME A PATRON',
+      image: 'https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=600&q=80',
       icon: Shield,
     },
     {
@@ -15,6 +16,7 @@ export const PartnerSection = ({ onOpenPartnerModal }) => {
       title: 'Foundations',
       desc: 'Family offices & private foundations funding cultural preservation and sovereign capital initiatives.',
       action: 'ENGAGE FOUNDATIONS',
+      image: 'https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=600&q=80',
       icon: HeartHandshake,
     },
     {
@@ -22,6 +24,7 @@ export const PartnerSection = ({ onOpenPartnerModal }) => {
       title: 'Hospitality',
       desc: 'Iconic palace properties & ultra-luxury retreats chosen as sanctuary settings.',
       action: 'OFFER A SANCTUARY',
+      image: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=600&q=80',
       icon: Castle,
     },
     {
@@ -29,6 +32,7 @@ export const PartnerSection = ({ onOpenPartnerModal }) => {
       title: 'Technology',
       desc: 'Next-generation infrastructure leaders addressing privacy, cryptography & institutional resilience.',
       action: 'EXPLORE ALIGNMENT',
+      image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=600&q=80',
       icon: Cpu,
     },
     {
@@ -36,6 +40,7 @@ export const PartnerSection = ({ onOpenPartnerModal }) => {
       title: 'Heritage & Maison',
       desc: 'Generations-old craft houses, bespoke ateliers, and fine horology & spirits maisons.',
       action: 'PARTNER WITH CRAFT',
+      image: 'https://images.unsplash.com/photo-1524805444758-089113d48a6d?auto=format&fit=crop&w=600&q=80',
       icon: Gem,
     },
   ];
@@ -68,33 +73,48 @@ export const PartnerSection = ({ onOpenPartnerModal }) => {
             return (
               <div
                 key={index}
-                className="bg-[#111115] border border-white/5 hover:border-gold/40 p-6 flex flex-col justify-between group transition-all duration-300"
+                className="bg-[#111115] border border-white/5 hover:border-gold/40 flex flex-col justify-between group transition-all duration-300 overflow-hidden"
               >
                 <div>
-                  <div className="flex items-center justify-between mb-4">
-                    <span className="text-[10px] font-mono tracking-widest text-gold/80">
-                      {item.step}
-                    </span>
-                    <Icon className="w-4 h-4 text-gold/60 group-hover:text-gold transition-colors" />
+                  {/* Card Image */}
+                  <div className="relative h-36 w-full overflow-hidden border-b border-white/5">
+                    <img
+                      src={item.image}
+                      alt={item.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#111115] via-[#111115]/30 to-black/30"></div>
+                    <div className="absolute top-3 left-3">
+                      <span className="text-[9px] font-mono tracking-widest text-gold bg-black/70 px-2 py-0.5 border border-gold/30">
+                        {item.step}
+                      </span>
+                    </div>
+                    <div className="absolute top-3 right-3 w-6 h-6 rounded-full bg-black/70 border border-gold/30 flex items-center justify-center text-gold">
+                      <Icon className="w-3 h-3" />
+                    </div>
                   </div>
 
-                  <h4 className="font-serif text-base text-white font-medium group-hover:text-gold-light transition-colors">
-                    {item.title}
-                  </h4>
+                  <div className="p-5">
+                    <h4 className="font-serif text-base text-white font-medium group-hover:text-gold-light transition-colors">
+                      {item.title}
+                    </h4>
 
-                  <p className="text-zinc-400 text-xs font-light mt-3 leading-relaxed">
-                    {item.desc}
-                  </p>
+                    <p className="text-zinc-400 text-xs font-light mt-2.5 leading-relaxed">
+                      {item.desc}
+                    </p>
+                  </div>
                 </div>
 
-                <div className="pt-6 mt-6 border-t border-white/5">
-                  <button
-                    onClick={() => onOpenPartnerModal(item.title)}
-                    className="inline-flex items-center gap-1.5 text-[10px] uppercase tracking-[0.2em] text-zinc-300 group-hover:text-gold transition-colors"
-                  >
-                    <span>{item.action}</span>
-                    <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
-                  </button>
+                <div className="p-5 pt-0 mt-2">
+                  <div className="pt-4 border-t border-white/5">
+                    <button
+                      onClick={() => onOpenPartnerModal(item.title)}
+                      className="inline-flex items-center gap-1.5 text-[10px] uppercase tracking-[0.2em] text-zinc-300 group-hover:text-gold transition-colors"
+                    >
+                      <span>{item.action}</span>
+                      <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
+                    </button>
+                  </div>
                 </div>
               </div>
             );

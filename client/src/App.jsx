@@ -19,6 +19,8 @@ import RequestInvitationPage from './pages/RequestInvitationPage';
 import ContactPage from './pages/ContactPage';
 import PastGuestsPage from './pages/PastGuestsPage';
 import AboutUsPage from './pages/AboutUsPage';
+import PrivacyPolicyPage from './pages/PrivacyPolicyPage';
+import GalleryPage from './pages/GalleryPage';
 
 function App() {
   // Sync page state with URL hash
@@ -32,17 +34,20 @@ function App() {
       'the-room',
       'experiences',
       'ecosystem',
+      'gallery',
       'partners-trust',
       'request-invitation',
       'contact',
       'past-guests',
       'about-us',
+      'privacy-policy',
     ];
     if (validPages.includes(hash)) return hash;
     return 'home';
   };
 
   const [currentPage, setCurrentPage] = useState(getPageFromHash());
+  const [selectedGatheringId, setSelectedGatheringId] = useState('founder-circle');
   const [isPetitionOpen, setIsPetitionOpen] = useState(false);
   const [isPartnerOpen, setIsPartnerOpen] = useState(false);
   const [partnerPillar, setPartnerPillar] = useState('The Sovereign Patron');
@@ -51,7 +56,8 @@ function App() {
 
   useEffect(() => {
     const handleHashChange = () => {
-      setCurrentPage(getPageFromHash());
+      const page = getPageFromHash();
+      setCurrentPage(page);
     };
     window.addEventListener('hashchange', handleHashChange);
     window.addEventListener('popstate', handleHashChange);
@@ -61,7 +67,10 @@ function App() {
     };
   }, []);
 
-  const navigateTo = (pageId) => {
+  const navigateTo = (pageId, gatheringId = null) => {
+    if (gatheringId) {
+      setSelectedGatheringId(gatheringId);
+    }
     setCurrentPage(pageId);
     window.location.hash = pageId === 'home' ? '' : `#${pageId}`;
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -89,6 +98,7 @@ function App() {
           <GatheringsPage
             onNavigate={navigateTo}
             onRequestInvitation={() => setIsPetitionOpen(true)}
+            onSelectGathering={(id) => setSelectedGatheringId(id)}
           />
         );
       case 'gathering-detail':
@@ -96,6 +106,8 @@ function App() {
           <GatheringDetailPage
             onNavigate={navigateTo}
             onRequestInvitation={() => setIsPetitionOpen(true)}
+            gatheringId={selectedGatheringId}
+            onSelectGathering={(id) => setSelectedGatheringId(id)}
           />
         );
       case 'the-prive':
@@ -158,6 +170,19 @@ function App() {
           <AboutUsPage
             onNavigate={navigateTo}
             onRequestInvitation={() => setIsPetitionOpen(true)}
+          />
+        );
+      case 'gallery':
+        return (
+          <GalleryPage
+            onNavigate={navigateTo}
+            onRequestInvitation={() => setIsPetitionOpen(true)}
+          />
+        );
+      case 'privacy-policy':
+        return (
+          <PrivacyPolicyPage
+            onNavigate={navigateTo}
           />
         );
       default:
