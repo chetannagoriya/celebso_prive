@@ -223,6 +223,7 @@ function App() {
           - Chapters & Discretion notice
       */}
       <Footer
+        currentPage={currentPage}
         onNavigate={navigateTo}
         onRequestInvitation={() => setIsPetitionOpen(true)}
         onOpenDashboard={() => setIsDashboardOpen(true)}

@@ -1,85 +1,59 @@
 import React from 'react';
-import { ChevronDown, Sparkles } from 'lucide-react';
-import heroGatheringImg from '../assets/hero-gatherings.jpg';
+import { ArrowRight } from 'lucide-react';
+import heroStageBackdrop from '../assets/hero-stage-backdrop.jpg';
 
-export const Hero = ({ onRequestInvitation, onExploreSalons }) => {
+export const Hero = ({ onRequestInvitation }) => {
   return (
-    <section className="relative min-h-[96vh] flex items-center justify-start overflow-hidden pt-28 pb-20">
-      {/* High-Resolution Curated Gathering Background Image */}
+    <section className="relative min-h-[85vh] sm:min-h-[90vh] lg:min-h-[92vh] flex items-center justify-start overflow-hidden pt-32 pb-20 bg-[#0A0A0C]">
+      {/* Background: Exact stage backdrop composition from uploaded stage photo */}
       <div className="absolute inset-0 z-0">
         <img
-          src={heroGatheringImg || '/hero-gatherings.jpg'}
-          alt="Celebso Privé founders, investors and business leaders gathering"
-          className="w-full h-full object-cover object-[70%_center] md:object-[75%_center]"
-          style={{ imageRendering: '-webkit-optimize-contrast', filter: 'contrast(1.04) brightness(0.98)' }}
+          src={heroStageBackdrop || '/hero-stage-backdrop.jpg'}
+          alt="Celebso Privé Founders Evening Stage Backdrop"
+          className="w-full h-full object-cover object-[right_20%] md:object-[right_25%] lg:object-[right_top]"
+          style={{
+            imageRendering: '-webkit-optimize-contrast',
+            filter: 'contrast(1.04) brightness(1.0)',
+          }}
         />
-        {/* Refined gradient mask: Deep contrast on left for typography, crystal clarity on right for the gathering */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0A0A0C] via-[#0A0A0C]/85 via-40% to-black/20"></div>
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0C] via-transparent via-20% to-black/50"></div>
+
+        {/* Responsive gradient overlay: Ensures 100% readability on left while keeping stage & text crystal clear on right */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0A0A0C] via-[#0A0A0C]/90 via-35% md:via-42% to-transparent pointer-events-none"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0C] via-transparent via-12% to-transparent pointer-events-none"></div>
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 w-full">
-        <div className="max-w-2xl lg:max-w-3xl space-y-7">
-          {/* Eyebrow / Subtitle */}
-          <div className="inline-flex items-center gap-2.5">
-            <span className="w-6 h-[1px] bg-gold"></span>
-            <span className="text-[10px] sm:text-[11px] font-sans font-semibold tracking-[0.3em] uppercase text-gold">
-              The Celebso Privé Network
-            </span>
-            <span className="w-6 h-[1px] bg-gold"></span>
-          </div>
-
-          {/* Main Headline */}
-          <h1 className="font-serif text-4xl sm:text-6xl lg:text-7xl font-normal leading-[1.08] text-white tracking-tight drop-shadow-lg">
-            THE RIGHT ROOM <br />
-            <span className="gold-gradient-text italic font-normal">
-              CHANGES EVERYTHING.
-            </span>
-          </h1>
-
-          {/* Body Paragraph */}
-          <p className="text-zinc-200 text-sm sm:text-base md:text-lg font-light leading-relaxed max-w-xl drop-shadow-md">
-            An interconnected community of founders, investors, and business leaders building trusted relationships, strategic conversations, and long-term opportunities across India's entrepreneurial ecosystem.
-          </p>
-
-          {/* Pillars / Format Pill */}
-          <div className="pt-1">
-            <p className="text-xs sm:text-sm uppercase tracking-[0.22em] text-gold font-medium drop-shadow-sm">
-              FOUNDERS' CIRCLES · INVESTOR ROUNDTABLES · PRIVATE GATHERINGS
+      {/* Main Content Area: Left-aligned typography exactly matching mockup */}
+      <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 w-full">
+        <div className="max-w-2xl lg:max-w-3xl space-y-6 sm:space-y-7">
+          {/* Eyebrow */}
+          <div className="inline-block">
+            <p className="text-[11px] sm:text-xs font-sans font-semibold tracking-[0.26em] uppercase text-[#C5A880] drop-shadow-sm">
+              THE CELEBSO PRIVÉ NETWORK
             </p>
           </div>
 
-          {/* Action CTAs */}
-          <div className="pt-4 flex flex-col sm:flex-row items-stretch sm:items-center gap-4 sm:gap-5">
+          {/* Main Headline (All caps, classic serif, 2 lines with periods) */}
+          <h1 className="font-serif text-3xl sm:text-5xl md:text-6xl lg:text-[4rem] xl:text-[4.5rem] font-normal leading-[1.12] text-white tracking-wide drop-shadow-md">
+            THE RIGHT ROOM. <br />
+            CHANGES EVERYTHING.
+          </h1>
+
+          {/* Subtitle / Paragraph */}
+          <p className="text-zinc-300 text-xs sm:text-sm md:text-base font-light leading-relaxed max-w-lg lg:max-w-xl pt-1 drop-shadow-sm">
+            An exclusive network of founders, investors and business leaders building trusted relationships, strategic conversations and meaningful opportunities.
+          </p>
+
+          {/* Action Button: Pill-shaped golden outline button matching mockup */}
+          <div className="pt-3 sm:pt-4">
             <button
               onClick={onRequestInvitation}
-              className="bg-gold hover:bg-gold-light text-[#0A0A0C] px-8 py-3.5 text-xs uppercase tracking-[0.24em] font-semibold transition-all duration-300 shadow-gold-glow text-center hover:scale-[1.02] active:scale-[0.98]"
+              className="inline-flex items-center gap-3 px-7 sm:px-8 py-3 sm:py-3.5 rounded-full border border-[#C5A880]/80 hover:border-gold text-[#E5C378] hover:text-white bg-black/40 hover:bg-gold/10 text-xs sm:text-[13px] uppercase tracking-[0.22em] font-medium transition-all duration-300 shadow-sm hover:shadow-gold-subtle group"
             >
-              Request An Invitation
-            </button>
-            <button
-              onClick={onExploreSalons}
-              className="border border-gold/50 hover:border-gold text-zinc-100 hover:text-gold px-7 py-3.5 text-xs uppercase tracking-[0.24em] font-medium transition-all duration-300 backdrop-blur-md bg-black/40 text-center"
-            >
-              Explore The Ecosystem
+              <span>REQUEST AN INVITATION</span>
+              <ArrowRight className="w-4 h-4 text-[#E5C378] group-hover:translate-x-1 transition-transform" />
             </button>
           </div>
         </div>
-      </div>
-
-      {/* Scroll Down Indicator */}
-      <div className="absolute bottom-8 left-8 hidden md:flex items-center gap-3 z-10 text-zinc-400">
-        <span className="text-[9px] uppercase tracking-[0.3em] text-zinc-400">
-          Scroll to explore
-        </span>
-        <div className="w-8 h-[1px] bg-zinc-600"></div>
-        <ChevronDown className="w-3.5 h-3.5 text-gold animate-bounce" />
-      </div>
-
-      {/* Brand Badge (Bottom Right) */}
-      <div className="absolute bottom-8 right-8 hidden lg:flex items-center gap-2 z-10 text-zinc-300 text-[10px] tracking-widest uppercase font-mono bg-black/60 px-3.5 py-1.5 border border-gold/30 backdrop-blur-md">
-        <span className="w-1.5 h-1.5 rounded-full bg-gold animate-pulse"></span>
-        <span>Building An Ecosystem, Not Just A Network</span>
       </div>
     </section>
   );

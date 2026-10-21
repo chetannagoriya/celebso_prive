@@ -3,9 +3,11 @@ import Hero from '../components/Hero';
 import StatsBar from '../components/StatsBar';
 import PrivateByDesign from '../components/PrivateByDesign';
 import BespokeSalons from '../components/BespokeSalons';
-import DimensionsConvergence from '../components/DimensionsConvergence';
-import PartnerSection from '../components/PartnerSection';
-import InvitationCTA from '../components/InvitationCTA';
+import TheSettingSection from '../components/TheSettingSection';
+import ThePeopleSection from '../components/ThePeopleSection';
+import WhoAttendsSection from '../components/WhoAttendsSection';
+import TheExperienceSection from '../components/TheExperienceSection';
+import TheEveningSection from '../components/TheEveningSection';
 
 export const HomePage = ({ onNavigate, onRequestInvitation, onOpenPartner, onOpenProcess }) => {
   return (
@@ -29,17 +31,20 @@ export const HomePage = ({ onNavigate, onRequestInvitation, onOpenPartner, onOpe
       {/* Three Bespoke Salons */}
       <BespokeSalons onRequestInvitation={onRequestInvitation} />
 
-      {/* Dimensions of Convergence */}
-      <DimensionsConvergence onOpenProcess={onOpenProcess} />
+      {/* The Setting: Designed for consequence (From thecatalystcollective.in) */}
+      <TheSettingSection />
 
-      {/* Partner Section */}
-      <PartnerSection onOpenPartnerModal={onOpenPartner} />
+      {/* The People: A night to remember */}
+      <ThePeopleSection />
 
-      {/* Grand Invitation CTA */}
-      <InvitationCTA
-        onRequestInvitation={onRequestInvitation}
-        onOpenProcess={onOpenProcess}
-      />
+      {/* Who Attends: The Room */}
+      <WhoAttendsSection onNavigate={onNavigate} />
+
+      {/* The Evening: The Experience */}
+      <TheExperienceSection />
+
+      {/* Details: The Evening */}
+      <TheEveningSection />
     </div>
   );
 };

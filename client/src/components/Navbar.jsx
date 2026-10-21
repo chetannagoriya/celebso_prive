@@ -20,8 +20,7 @@ export const Navbar = ({
 
   // Main navigation links for the header:
   const headerNavItems = [
-    { id: 'home', label: 'HOME' },
-    { id: 'gatherings', label: 'GATHERINGS' },
+    { id: 'gatherings', label: 'EVENTS' },
     { id: 'the-prive', label: 'THE PRIVÉ' },
     { id: 'the-room', label: 'THE ROOM' },
     { id: 'ecosystem', label: 'ECOSYSTEM' },
@@ -31,7 +30,7 @@ export const Navbar = ({
   // All pages for the drawer menu
   const allPages = [
     { id: 'home', label: 'HOME', category: 'The Sanctum', desc: 'Sovereign fellowship & heritage convergence' },
-    { id: 'gatherings', label: 'GATHERINGS', category: 'Conclaves', desc: 'Curated conclaves across historic sanctums' },
+    { id: 'gatherings', label: 'EVENTS', category: 'Conclaves', desc: 'Curated conclaves across historic sanctums' },
     { id: 'gathering-detail', label: 'GATHERING DETAIL', category: 'Conclaves', desc: 'Flagship Amber Fort conclave dossier & schedule' },
     { id: 'the-prive', label: 'THE PRIVÉ', category: 'The Sanctum', desc: 'The order of sovereign fellowship' },
     { id: 'the-room', label: 'THE ROOM', category: 'The Sanctum', desc: 'The 30-seat non-hierarchical round' },
