@@ -1,5 +1,7 @@
 import React from 'react';
 import { ArrowRight, Utensils, Users, Sparkles } from 'lucide-react';
+import pillar1Img from '../assets/pillar-convergence-1.jpg';
+import pillar2Img from '../assets/pillar-convergence-2.jpg';
 import roundtableImg from '../assets/the-roundtable.jpg';
 
 export const BespokeSalons = ({ onRequestInvitation }) => {
@@ -9,7 +11,7 @@ export const BespokeSalons = ({ onRequestInvitation }) => {
       tag: 'DINING · HERITAGE',
       description:
         'An extraordinary multi-course culinary journey orchestrated by royal chefs and heritage custodians under candlelit palace arches.',
-      image: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=800&q=80',
+      image: pillar1Img || '/pillar-convergence-1.jpg',
       icon: Utensils,
     },
     {
@@ -25,7 +27,7 @@ export const BespokeSalons = ({ onRequestInvitation }) => {
       tag: 'CULTURE · ALLIANCE',
       description:
         'Unrushed fellowship amidst nocturnal grandeur, illuminated marble terraces, and timeless acoustic chamber concerts.',
-      image: 'https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?auto=format&fit=crop&w=800&q=80',
+      image: pillar2Img || '/pillar-convergence-2.jpg',
       icon: Sparkles,
     },
   ];

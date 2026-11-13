@@ -1,6 +1,6 @@
 import React from 'react';
 import { Wine, Music, MessageCircle, Handshake } from 'lucide-react';
-import experienceEstateImg from '../assets/experience-estate-sunset.jpg';
+import experienceEstateImg from '../assets/experience-lounge-gathering.jpg';
 import barImg from '../assets/catalyst-bar.webp';
 
 export const TheExperienceSection = () => {
@@ -43,7 +43,7 @@ export const TheExperienceSection = () => {
             The Experience
           </h2>
           <p className="font-sans text-sm sm:text-base text-white/45 max-w-xl mx-auto leading-relaxed font-light">
-            Set within the ballroom environment of DLF Camellias, the evening is designed to feel rare, private, and deeply intentional.
+            Set within the ballroom environment of Novotel Hotel, New Delhi, the evening is designed to feel rare, private, and deeply intentional.
           </p>
         </div>
 
@@ -51,15 +51,15 @@ export const TheExperienceSection = () => {
         <div className="mb-10 grid grid-cols-1 md:grid-cols-2 gap-5">
           <div className="relative overflow-hidden aspect-[4/3] bg-black/60 border border-white/10 shadow-2xl group">
             <img
-              src={experienceEstateImg || '/experience-estate-sunset.jpg'}
-              alt="The Camellias Estate and sunset arrival"
+              src={experienceEstateImg || '/experience-lounge-gathering.jpg'}
+              alt="Grand lounge gathering and evening salon"
               className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
               loading="lazy"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-black/25 pointer-events-none"></div>
             <div className="absolute bottom-4 left-5 pointer-events-none">
               <span className="text-[9px] uppercase font-mono tracking-[0.22em] text-white/80">
-                The Camellias Estate · Arrival
+                Skyline Salon · Novotel
               </span>
             </div>
           </div>

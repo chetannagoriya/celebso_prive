@@ -1,4 +1,5 @@
 import React from 'react';
+import theRoomSessionImg from '../assets/room-assembly-circle.jpg';
 import { 
   Users, 
   EyeOff, 
@@ -104,94 +105,115 @@ export const TheRoomPage = ({ onNavigate, onRequestInvitation }) => {
 
       {/* 2. THE PHYSICAL GEOMETRY OF CONNECTION */}
       <section className="py-20 sm:py-28 border-b border-white/5 bg-[#08080A]">
-        <div className="max-w-5xl mx-auto px-6 sm:px-8">
-          <div className="border border-gold/30 bg-gradient-to-b from-[#121217] via-[#0E0E12] to-black p-8 sm:p-14 lg:p-16 shadow-2xl relative overflow-hidden text-center">
+        <div className="max-w-6xl mx-auto px-6 sm:px-8">
+          <div className="border border-gold/30 bg-gradient-to-b from-[#121217] via-[#0E0E12] to-black p-8 sm:p-12 lg:p-14 shadow-2xl relative overflow-hidden">
             {/* Ambient accent */}
             <div className="absolute top-0 right-0 w-48 h-48 bg-gold/5 rounded-full blur-3xl pointer-events-none"></div>
 
-            <div className="max-w-2xl mx-auto space-y-4 mb-10 relative z-10">
-              <div className="inline-flex items-center gap-2">
-                <span className="w-5 h-[1px] bg-gold"></span>
-                <p className="text-[10px] sm:text-[11px] uppercase tracking-[0.28em] text-gold font-mono font-semibold">
-                  THE PHYSICAL GEOMETRY OF CONNECTION
-                </p>
-                <span className="w-5 h-[1px] bg-gold"></span>
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center relative z-10">
+              {/* Left Column: Real Photo of The Non-Hierarchical Circle (5 cols) */}
+              <div className="lg:col-span-5 relative overflow-hidden aspect-[4/5] border border-white/10 shadow-2xl group bg-black/60">
+                <img
+                  src={theRoomSessionImg || '/room-assembly-circle.jpg'}
+                  alt="The Room - An intimate non-hierarchical gathering"
+                  className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/20 pointer-events-none"></div>
+                <div className="absolute bottom-4 left-5 pointer-events-none">
+                  <span className="text-[10px] uppercase font-mono tracking-[0.25em] text-gold/90">
+                    The Room · Curated Assembly
+                  </span>
+                </div>
               </div>
 
-              <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-white font-normal leading-tight">
-                The Non-Hierarchical Round
-              </h2>
+              {/* Right Column: Geometry Narrative & Diagram (7 cols) */}
+              <div className="lg:col-span-7 space-y-6 text-center lg:text-left">
+                <div className="space-y-3">
+                  <div className="inline-flex items-center gap-2">
+                    <span className="w-5 h-[1px] bg-gold"></span>
+                    <p className="text-[10px] sm:text-[11px] uppercase tracking-[0.28em] text-gold font-mono font-semibold">
+                      THE PHYSICAL GEOMETRY OF CONNECTION
+                    </p>
+                    <span className="w-5 h-[1px] bg-gold"></span>
+                  </div>
 
-              <div className="w-16 h-[1px] bg-gold/50 mx-auto my-3"></div>
+                  <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-white font-normal leading-tight">
+                    The Non-Hierarchical Round
+                  </h2>
 
-              <p className="text-xs sm:text-sm md:text-base text-zinc-300 font-light leading-relaxed">
-                At The Room, there is no keynote stage and no back row. Every participant has a seat at the table. Founders, investors, technology leaders, and business visionaries come together in a setting designed for open dialogue, shared perspectives, and meaningful connections.
-              </p>
-            </div>
+                  <div className="w-16 h-[1px] bg-gold/50 mx-auto lg:mx-0 my-3"></div>
 
-            {/* THE GATHERING CIRCLE Interactive Diagram */}
-            <div className="space-y-4 pt-2">
-              <p className="text-[10px] uppercase tracking-[0.3em] font-mono text-gold/80">
-                THE GATHERING CIRCLE
-              </p>
-
-              <div className="relative w-72 h-72 sm:w-80 sm:h-80 mx-auto my-6 flex items-center justify-center">
-                {/* Outer concentric rings */}
-                <div className="absolute inset-0 rounded-full border border-gold/30"></div>
-                <div className="absolute inset-6 rounded-full border border-dashed border-gold/20"></div>
-
-                {/* Center Core */}
-                <div className="w-24 h-24 rounded-full bg-gradient-to-tr from-amber-950/80 via-black to-black border border-gold/40 flex flex-col items-center justify-center p-2 z-10 shadow-gold-glow">
-                  <Flame className="w-6 h-6 text-gold animate-pulse mb-1" />
-                  <span className="text-[8px] uppercase tracking-[0.2em] text-gold font-semibold">The Hearth</span>
+                  <p className="text-xs sm:text-sm md:text-base text-zinc-300 font-light leading-relaxed">
+                    At The Room, there is no keynote stage and no back row. Every participant has a seat at the table. Founders, investors, technology leaders, and business visionaries come together in a setting designed for open dialogue, shared perspectives, and meaningful connections.
+                  </p>
                 </div>
 
-                {/* 30 Discrete Points Representing Seats */}
-                {[...Array(30)].map((_, i) => {
-                  const angle = (i * 360) / 30;
-                  const rad = (angle * Math.PI) / 180;
-                  const r = 120; // radius
-                  const x = Math.round(r * Math.cos(rad));
-                  const y = Math.round(r * Math.sin(rad));
-                  const isConfirmed = i < 18; // 18 confirmed
-                  return (
-                    <div
-                      key={i}
-                      className="absolute w-3.5 h-3.5 -ml-1.5 -mt-1.5 rounded-full transition-transform hover:scale-150 cursor-pointer group"
-                      style={{
-                        top: `calc(50% + ${y}px)`,
-                        left: `calc(50% + ${x}px)`,
-                      }}
-                      title={`Seat ${i + 1}: ${isConfirmed ? 'Confirmed Participant' : 'Invitation Pending'}`}
-                    >
-                      <div
-                        className={`w-full h-full rounded-full border ${
-                          isConfirmed
-                            ? 'bg-gold border-gold shadow-[0_0_8px_rgba(197,160,89,0.8)]'
-                            : 'bg-black/90 border-gold/40 hover:border-gold'
-                        }`}
-                      />
+                {/* THE GATHERING CIRCLE Interactive Diagram */}
+                <div className="space-y-4 pt-2">
+                  <p className="text-[10px] uppercase tracking-[0.3em] font-mono text-gold/80">
+                    THE GATHERING CIRCLE
+                  </p>
+
+                  <div className="relative w-64 h-64 sm:w-72 sm:h-72 mx-auto lg:mx-0 my-4 flex items-center justify-center">
+                    {/* Outer concentric rings */}
+                    <div className="absolute inset-0 rounded-full border border-gold/30"></div>
+                    <div className="absolute inset-5 rounded-full border border-dashed border-gold/20"></div>
+
+                    {/* Center Core */}
+                    <div className="w-20 h-20 rounded-full bg-gradient-to-tr from-amber-950/80 via-black to-black border border-gold/40 flex flex-col items-center justify-center p-2 z-10 shadow-gold-glow">
+                      <Flame className="w-5 h-5 text-gold animate-pulse mb-1" />
+                      <span className="text-[7.5px] uppercase tracking-[0.2em] text-gold font-semibold">The Hearth</span>
                     </div>
-                  );
-                })}
-              </div>
 
-              {/* Legend & Note */}
-              <div className="space-y-3 pt-2">
-                <div className="flex flex-wrap items-center justify-center gap-6 text-xs font-mono text-zinc-300">
-                  <div className="flex items-center gap-2">
-                    <span className="w-3 h-3 rounded-full bg-gold border border-gold shadow-sm"></span>
-                    <span>Confirmed Participants</span>
+                    {/* 30 Discrete Points Representing Seats */}
+                    {[...Array(30)].map((_, i) => {
+                      const angle = (i * 360) / 30;
+                      const rad = (angle * Math.PI) / 180;
+                      const r = 106; // radius
+                      const x = Math.round(r * Math.cos(rad));
+                      const y = Math.round(r * Math.sin(rad));
+                      const isConfirmed = i < 18; // 18 confirmed
+                      return (
+                        <div
+                          key={i}
+                          className="absolute w-3 h-3 -ml-1.5 -mt-1.5 rounded-full transition-transform hover:scale-150 cursor-pointer group"
+                          style={{
+                            top: `calc(50% + ${y}px)`,
+                            left: `calc(50% + ${x}px)`,
+                          }}
+                          title={`Seat ${i + 1}: ${isConfirmed ? 'Confirmed Participant' : 'Invitation Pending'}`}
+                        >
+                          <div
+                            className={`w-full h-full rounded-full border ${
+                              isConfirmed
+                                ? 'bg-gold border-gold shadow-[0_0_8px_rgba(197,160,89,0.8)]'
+                                : 'bg-black/90 border-gold/40 hover:border-gold'
+                            }`}
+                          />
+                        </div>
+                      );
+                    })}
                   </div>
-                  <div className="flex items-center gap-2">
-                    <span className="w-3 h-3 rounded-full bg-black/90 border border-gold/50"></span>
-                    <span>Invitations Pending</span>
+
+                  {/* Legend & Note */}
+                  <div className="space-y-2 pt-1">
+                    <div className="flex flex-wrap items-center justify-center lg:justify-start gap-5 text-xs font-mono text-zinc-300">
+                      <div className="flex items-center gap-2">
+                        <span className="w-2.5 h-2.5 rounded-full bg-gold border border-gold shadow-sm"></span>
+                        <span>Confirmed Participants</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <span className="w-2.5 h-2.5 rounded-full bg-black/90 border border-gold/50"></span>
+                        <span>Invitations Pending</span>
+                      </div>
+                    </div>
+
+                    <p className="text-[11px] font-serif text-zinc-500 italic">
+                      * Final participant numbers vary by event.
+                    </p>
                   </div>
                 </div>
-
-                <p className="text-[11px] font-serif text-zinc-500 italic">
-                  * Final participant numbers vary by event.
-                </p>
               </div>
             </div>
           </div>

@@ -1,5 +1,5 @@
 import React from 'react';
-import eveningImg from '../assets/catalyst-evening.webp';
+import eveningImg from '../assets/people-night-to-remember.jpg';
 
 export const ThePeopleSection = () => {
   return (
@@ -26,8 +26,8 @@ export const ThePeopleSection = () => {
 
           <div className="relative overflow-hidden aspect-[5/4] bg-black/60 border border-white/10 shadow-2xl group">
             <img
-              src={eveningImg || '/catalyst-evening.webp'}
-              alt="Private luxury seating and conversation environment"
+              src={eveningImg || '/people-night-to-remember.jpg'}
+              alt="An evening to remember at Celebso Privé"
               className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
               loading="lazy"
             />

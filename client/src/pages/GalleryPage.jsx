@@ -1,145 +1,36 @@
 import React, { useState } from 'react';
-import { Camera, Sparkles, X, ZoomIn, ArrowRight, MapPin } from 'lucide-react';
+import { Camera, Sparkles, X, ArrowRight } from 'lucide-react';
 
-import heroPalaceHd from '../assets/hero-palace-hd.jpg';
-import heroGatherings from '../assets/hero-gatherings.jpg';
-import theRoundtable from '../assets/the-roundtable.jpg';
-import royalHospitality from '../assets/royal-hospitality.jpg';
-import equestrianTradition from '../assets/equestrian-tradition.jpg';
-import udaipurLakePalace from '../assets/udaipur-lake-palace.jpg';
-import expAviation from '../assets/experiences/exp-aviation.jpg';
-import expHorology from '../assets/experiences/exp-horology.jpg';
-import expBanquet from '../assets/experiences/exp-banquet.jpg';
-import expAlpine from '../assets/experiences/exp-alpine.jpg';
-import rooftopGathering from '../assets/rooftop-gathering.jpg';
-import cardBallroomHd from '../assets/card-ballroom-hd.jpg';
+import gallery1 from '../assets/gallery/gallery-1.jpg';
+import gallery2 from '../assets/gallery/gallery-2.jpg';
+import gallery3 from '../assets/gallery/gallery-3.jpg';
+import gallery4 from '../assets/gallery/gallery-4.jpg';
+import gallery5 from '../assets/gallery/gallery-5.jpg';
+import gallery6 from '../assets/gallery/gallery-6.jpg';
+import gallery7 from '../assets/gallery/gallery-7.jpg';
+import gallery8 from '../assets/gallery/gallery-8.jpg';
+import gallery9 from '../assets/gallery/gallery-9.jpg';
+import gallery10 from '../assets/gallery/gallery-10.jpg';
+import gallery11 from '../assets/gallery/gallery-11.jpg';
+import gallery12 from '../assets/gallery/gallery-12.jpg';
 
 export const GalleryPage = ({ onNavigate, onRequestInvitation }) => {
-  const [activeCategory, setActiveCategory] = useState('all');
   const [activePhoto, setActivePhoto] = useState(null);
 
-  const categories = [
-    { id: 'all', label: 'All Chronicles' },
-    { id: 'sanctuaries', label: 'Sanctuaries & Palaces' },
-    { id: 'salons', label: 'Curated Salons' },
-    { id: 'immersions', label: 'Bespoke Immersions' },
-  ];
-
   const galleryItems = [
-    {
-      id: 1,
-      title: 'Nocturnal Palace Soirée',
-      category: 'sanctuaries',
-      location: 'Umaid Bhawan Palace, Jodhpur',
-      image: heroPalaceHd,
-      desc: 'Historic courtyards illuminated by traditional torches and golden twilight for thirty sovereign fellows.',
-      span: 'md:col-span-2 md:row-span-2',
-    },
-    {
-      id: 2,
-      title: 'Founders & Capital Circle',
-      category: 'salons',
-      location: 'Skyline Terrace, Mumbai',
-      image: heroGatherings,
-      desc: 'Founders, investors, and technology leaders in conversation over champagne.',
-      span: 'md:col-span-1 md:row-span-1',
-    },
-    {
-      id: 3,
-      title: 'The Non-Hierarchical Round',
-      category: 'salons',
-      location: 'The Room, Private Assembly',
-      image: theRoundtable,
-      desc: 'Chatham House discourse where titles give way to peer-level wisdom.',
-      span: 'md:col-span-1 md:row-span-1',
-    },
-    {
-      id: 4,
-      title: 'Coastal Twilight Repast',
-      category: 'immersions',
-      location: 'Private Sanctuary Beachfront',
-      image: royalHospitality,
-      desc: 'Open-air fireside dining under the stars with candlelit long-table geometry.',
-      span: 'md:col-span-1 md:row-span-1',
-    },
-    {
-      id: 5,
-      title: 'Equestrian Tradition & Polo',
-      category: 'immersions',
-      location: 'Royal Heritage Stables, Jaipur',
-      image: equestrianTradition,
-      desc: 'Private polo exhibition and heritage equestrian stewardship.',
-      span: 'md:col-span-1 md:row-span-1',
-    },
-    {
-      id: 6,
-      title: 'Island Palace Seclusion',
-      category: 'sanctuaries',
-      location: 'Taj Lake Palace, Udaipur',
-      image: udaipurLakePalace,
-      desc: 'Secluded water palace access restricted solely to approved attendees.',
-      span: 'md:col-span-2 md:row-span-1',
-    },
-    {
-      id: 7,
-      title: 'Aviation Conduits & Tarmacs',
-      category: 'immersions',
-      location: 'Direct FBO Charter Conduits',
-      image: expAviation,
-      desc: 'Sleek Gulfstream long-range transit with private tarmac facilitation.',
-      span: 'md:col-span-1 md:row-span-1',
-    },
-    {
-      id: 8,
-      title: 'Haute Horology Atelier',
-      category: 'immersions',
-      location: 'Geneva Archival Vaults',
-      image: expHorology,
-      desc: 'Private handling of museum-grade tourbillon movements and grand complications.',
-      span: 'md:col-span-1 md:row-span-1',
-    },
-    {
-      id: 9,
-      title: 'Imperial State Banquet',
-      category: 'salons',
-      location: 'Diwan-e-Khas Chambers',
-      image: expBanquet,
-      desc: 'Seven-course gastronomic feats prepared by generational royal khansamas.',
-      span: 'md:col-span-1 md:row-span-1',
-    },
-    {
-      id: 10,
-      title: 'Winter Alpine Conclave',
-      category: 'sanctuaries',
-      location: 'Badrutt’s Palace, St. Moritz',
-      image: expAlpine,
-      desc: 'High-altitude thinking retreat amidst the Engadin snows and alpine calm.',
-      span: 'md:col-span-1 md:row-span-1',
-    },
-    {
-      id: 11,
-      title: 'Metropolitan Rooftop Salon',
-      category: 'salons',
-      location: 'Private Terrace, New Delhi',
-      image: rooftopGathering,
-      desc: 'Panoramic skyline discourse extending into midnight fireside conversations.',
-      span: 'md:col-span-1 md:row-span-1',
-    },
-    {
-      id: 12,
-      title: 'Sovereign Ballroom Assembly',
-      category: 'sanctuaries',
-      location: 'Imperial Bastion, Jaipur',
-      image: cardBallroomHd,
-      desc: 'Crystal chandeliers and historic architecture welcoming leaders across India.',
-      span: 'md:col-span-1 md:row-span-1',
-    },
+    { id: 1, image: gallery1 },
+    { id: 2, image: gallery2 },
+    { id: 3, image: gallery3 },
+    { id: 4, image: gallery4 },
+    { id: 5, image: gallery5 },
+    { id: 6, image: gallery6 },
+    { id: 7, image: gallery7 },
+    { id: 8, image: gallery8 },
+    { id: 9, image: gallery9 },
+    { id: 10, image: gallery10 },
+    { id: 11, image: gallery11 },
+    { id: 12, image: gallery12 },
   ];
-
-  const filteredItems =
-    activeCategory === 'all'
-      ? galleryItems
-      : galleryItems.filter((item) => item.category === activeCategory);
 
   return (
     <div className="pt-32 pb-24 px-6 sm:px-8 max-w-7xl mx-auto">
@@ -155,7 +46,7 @@ export const GalleryPage = ({ onNavigate, onRequestInvitation }) => {
         </h1>
 
         <p className="text-zinc-400 text-xs sm:text-sm font-light leading-relaxed max-w-xl mx-auto">
-          An intimate glimpse into curated gatherings, sovereign palace sanctuaries, and the meaningful connections forged across the Celebso Privé circle.
+          An intimate glimpse into curated gatherings, sovereign sanctuaries, and the meaningful connections forged across the Celebso Privé circle.
         </p>
 
         <div className="flex items-center justify-center gap-3 pt-2">
@@ -165,105 +56,51 @@ export const GalleryPage = ({ onNavigate, onRequestInvitation }) => {
         </div>
       </div>
 
-      {/* Filter Tabs */}
-      <div className="flex items-center justify-center gap-2 flex-wrap mb-12">
-        {categories.map((cat) => (
-          <button
-            key={cat.id}
-            onClick={() => setActiveCategory(cat.id)}
-            className={`px-5 py-2 text-xs uppercase tracking-[0.2em] font-mono transition-all border ${
-              activeCategory === cat.id
-                ? 'border-gold bg-gold text-[#0A0A0C] font-semibold shadow-gold-glow'
-                : 'border-white/10 hover:border-gold/40 text-zinc-400 hover:text-white bg-[#101014]'
-            }`}
-          >
-            {cat.label}
-          </button>
-        ))}
-      </div>
-
-      {/* Masonry / Grid Gallery */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-5">
-        {filteredItems.map((item) => (
+      {/* Clean Grid Gallery — Pure Images Without Text Overlay */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-5 sm:gap-6">
+        {galleryItems.map((item) => (
           <div
             key={item.id}
             onClick={() => setActivePhoto(item)}
-            className="group relative h-72 rounded-none overflow-hidden border border-white/10 hover:border-gold/60 cursor-pointer transition-all duration-500 bg-[#0E0E12] flex flex-col justify-end p-5"
+            className="group relative aspect-[4/5] overflow-hidden border border-white/10 hover:border-gold/50 cursor-pointer transition-all duration-500 bg-[#0E0E12] shadow-2xl"
           >
-            {/* Background Image */}
+            {/* Background Image with Smooth Zoom */}
             <img
               src={item.image}
-              alt={item.title}
-              className="absolute inset-0 w-full h-full object-cover group-hover:scale-108 transition-transform duration-700 ease-out"
+              alt={`Celebso Privé Gallery ${item.id}`}
+              className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+              loading="lazy"
             />
-
-            {/* Gradient Overlays */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent group-hover:opacity-90 transition-opacity"></div>
-            <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors"></div>
-
-            {/* Top Bar inside Card */}
-            <div className="absolute top-3.5 left-3.5 right-3.5 flex items-center justify-between z-10">
-              <span className="inline-flex items-center gap-1 text-[9px] font-mono uppercase tracking-widest text-gold bg-black/80 px-2.5 py-1 border border-gold/30 backdrop-blur-sm">
-                <MapPin className="w-2.5 h-2.5 text-gold" />
-                <span>{item.location}</span>
-              </span>
-              <div className="w-7 h-7 rounded-full bg-black/80 border border-gold/40 flex items-center justify-center text-gold opacity-0 group-hover:opacity-100 transition-opacity">
-                <ZoomIn className="w-3.5 h-3.5" />
-              </div>
-            </div>
-
-            {/* Content Bottom */}
-            <div className="relative z-10 space-y-1">
-              <h4 className="font-serif text-base sm:text-lg text-white font-normal group-hover:text-gold-light transition-colors leading-snug">
-                {item.title}
-              </h4>
-              <p className="text-[11px] text-zinc-300 font-light leading-relaxed line-clamp-2">
-                {item.desc}
-              </p>
-            </div>
           </div>
         ))}
       </div>
 
-      {/* Lightbox Modal */}
+      {/* Clean Lightbox Modal — Pure Image View */}
       {activePhoto && (
         <div
-          className="fixed inset-0 z-50 bg-black/90 backdrop-blur-md flex items-center justify-center p-4 sm:p-8"
+          className="fixed inset-0 z-50 bg-black/92 backdrop-blur-md flex items-center justify-center p-4 sm:p-8"
           onClick={() => setActivePhoto(null)}
         >
           <div
-            className="relative max-w-4xl w-full bg-[#101014] border border-gold/40 overflow-hidden shadow-2xl"
+            className="relative max-w-5xl max-h-[90vh] bg-transparent border border-gold/40 overflow-hidden shadow-2xl"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Close Button */}
             <button
               onClick={() => setActivePhoto(null)}
-              className="absolute top-4 right-4 z-20 w-9 h-9 rounded-full bg-black/80 border border-gold/40 text-gold flex items-center justify-center hover:bg-gold hover:text-black transition-colors"
+              className="absolute top-4 right-4 z-20 w-10 h-10 rounded-full bg-black/80 border border-gold/50 text-gold flex items-center justify-center hover:bg-gold hover:text-black transition-colors"
+              aria-label="Close photo"
             >
-              <X className="w-4 h-4" />
+              <X className="w-5 h-5" />
             </button>
 
-            {/* Photo */}
-            <div className="relative max-h-[65vh] w-full overflow-hidden bg-black flex items-center justify-center">
+            {/* Photo without text */}
+            <div className="relative max-h-[85vh] flex items-center justify-center bg-black">
               <img
                 src={activePhoto.image}
-                alt={activePhoto.title}
-                className="w-full h-full object-contain max-h-[65vh]"
+                alt="Celebso Privé Gallery View"
+                className="w-auto h-auto max-h-[85vh] max-w-full object-contain"
               />
-            </div>
-
-            {/* Caption */}
-            <div className="p-6 sm:p-8 border-t border-white/10 space-y-2">
-              <div className="flex items-center gap-2 text-gold text-xs font-mono uppercase tracking-widest">
-                <MapPin className="w-3.5 h-3.5" />
-                <span>{activePhoto.location}</span>
-              </div>
-              <h3 className="font-serif text-2xl text-white font-normal">
-                {activePhoto.title}
-              </h3>
-              <p className="text-sm text-zinc-300 font-light leading-relaxed">
-                {activePhoto.desc}
-              </p>
             </div>
           </div>
         </div>

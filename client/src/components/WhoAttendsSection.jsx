@@ -1,5 +1,5 @@
 import React from 'react';
-import ballroomImg from '../assets/catalyst-ballroom.webp';
+import roomImg from '../assets/room-fireplace-conclave.jpg';
 
 export const WhoAttendsSection = ({ onNavigate }) => {
   const categories = [
@@ -67,15 +67,15 @@ export const WhoAttendsSection = ({ onNavigate }) => {
 
           <div className="relative overflow-hidden aspect-[16/9] bg-black/60 border border-white/10 shadow-2xl group">
             <img
-              src={ballroomImg || '/catalyst-ballroom.webp'}
-              alt="Ballroom conclave and gala dinner setting"
+              src={roomImg || '/room-fireplace-conclave.jpg'}
+              alt="The Room conclave and fireside dialogue"
               className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
               loading="lazy"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-black/25 pointer-events-none"></div>
             <div className="absolute bottom-5 left-6 pointer-events-none">
               <span className="text-[10px] uppercase font-mono tracking-[0.25em] text-gold/90">
-                Grand Ballroom · Camellias Setting
+                The Room · Fireside Dialogue
               </span>
             </div>
           </div>

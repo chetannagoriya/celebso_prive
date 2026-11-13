@@ -6,14 +6,14 @@ export const TheEveningSection = () => {
     {
       icon: Calendar,
       label: 'Date',
-      value: 'December 2026',
+      value: '22 October',
       sub: 'Private Evening',
     },
     {
       icon: MapPin,
       label: 'Venue',
-      value: 'DLF Camellias',
-      sub: 'Gurgaon, NCR',
+      value: 'Novotel Hotel',
+      sub: 'New Delhi',
     },
     {
       icon: Shirt,
