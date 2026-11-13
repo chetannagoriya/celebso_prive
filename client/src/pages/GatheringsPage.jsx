@@ -30,8 +30,10 @@ export const GatheringsPage = ({ onNavigate, onRequestInvitation, onSelectGather
     return item.isUpcoming;
   });
 
-  // Sorting
+  // Sorting: featured events pinned to the top
   const sortedGatherings = [...filtered].sort((a, b) => {
+    if (a.featured && !b.featured) return -1;
+    if (!a.featured && b.featured) return 1;
     if (sortBy === 'DATE_ASC') return a.dateSort.localeCompare(b.dateSort);
     if (sortBy === 'DATE_DESC') return b.dateSort.localeCompare(a.dateSort);
     if (sortBy === 'CITY') return a.city.localeCompare(b.city);
@@ -256,12 +258,27 @@ export const GatheringsPage = ({ onNavigate, onRequestInvitation, onSelectGather
                       </div>
 
                       <div className="flex items-center gap-2 sm:gap-3">
+                        {item.lumaUrl && (
+                          <a
+                            href={item.lumaUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="border border-gold bg-gold hover:bg-gold-light text-black px-4 sm:px-5 py-2.5 text-[10px] sm:text-[11px] uppercase tracking-[0.22em] font-semibold transition-all duration-300 flex items-center gap-2 shadow-sm whitespace-nowrap"
+                          >
+                            <span>REGISTER ON LUMA</span>
+                            <ArrowRight className="w-3.5 h-3.5" />
+                          </a>
+                        )}
                         <button
                           onClick={() => {
                             if (onSelectGathering) onSelectGathering(item.id);
                             onNavigate('gathering-detail', item.id);
                           }}
-                          className="border border-gold/70 hover:border-gold text-gold hover:bg-gold hover:text-black px-4 sm:px-6 py-2.5 text-[10px] sm:text-[11px] uppercase tracking-[0.22em] font-medium transition-all duration-300 flex items-center gap-2 shadow-sm whitespace-nowrap group/btn"
+                          className={`${
+                            item.lumaUrl
+                              ? 'border border-white/20 hover:border-gold/60 text-zinc-300 hover:text-white'
+                              : 'border border-gold/70 hover:border-gold text-gold hover:bg-gold hover:text-black'
+                          } px-4 sm:px-6 py-2.5 text-[10px] sm:text-[11px] uppercase tracking-[0.22em] font-medium transition-all duration-300 flex items-center gap-2 shadow-sm whitespace-nowrap group/btn`}
                         >
                           <span>VIEW GATHERING</span>
                           <ArrowRight className="w-3.5 h-3.5 group-hover/btn:translate-x-1 transition-transform" />

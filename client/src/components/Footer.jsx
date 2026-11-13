@@ -44,7 +44,7 @@ export const Footer = ({
           {/* Social Icons (Mobile) */}
           <div className="flex items-center gap-3">
             <a
-              href="https://www.linkedin.com"
+              href="https://www.linkedin.com/company/celebso/posts/"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn"
@@ -57,7 +57,7 @@ export const Footer = ({
               </svg>
             </a>
             <a
-              href="https://www.instagram.com"
+              href="https://www.instagram.com/celebso_prive?mdxt=MTZoZ2xlczFnajFlYQ=="
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Instagram"
@@ -110,7 +110,7 @@ export const Footer = ({
             {/* Social Icons (Desktop) */}
             <div className="flex items-center gap-3">
               <a
-                href="https://www.linkedin.com"
+                href="https://www.linkedin.com/company/celebso/posts/"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="LinkedIn"
@@ -123,7 +123,7 @@ export const Footer = ({
                 </svg>
               </a>
               <a
-                href="https://www.instagram.com"
+                href="https://www.instagram.com/celebso_prive?mdxt=MTZoZ2xlczFnajFlYQ=="
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram"
@@ -333,7 +333,7 @@ export const Footer = ({
         {/* Bottom Rights Bar like catalyst */}
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-[10px] text-white/30 font-sans tracking-wider text-center md:text-left order-2 md:order-1">
-            © Created by Celebso Group, a Celebso Privé initiative. All rights reserved.
+            All Rights Reserved. A Celebso Group Company.
           </p>
 
           <div className="flex items-center gap-6 order-1 md:order-2">

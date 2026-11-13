@@ -6,7 +6,7 @@ export const TheEveningSection = () => {
     {
       icon: Calendar,
       label: 'Date',
-      value: '22 October',
+      value: '22 November',
       sub: 'Private Evening',
     },
     {

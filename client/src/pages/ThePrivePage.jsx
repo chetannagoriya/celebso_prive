@@ -11,6 +11,7 @@ import {
   CheckCircle2, 
   Lock 
 } from 'lucide-react';
+import foundersEveningWallImg from '../assets/prive-founders-evening-wall.jpg';
 
 export const ThePrivePage = ({ onNavigate, onRequestInvitation }) => {
   const circles = [
@@ -111,6 +112,34 @@ export const ThePrivePage = ({ onNavigate, onRequestInvitation }) => {
             >
               Explore Gatherings
             </button>
+          </div>
+        </div>
+      </section>
+
+      {/* Featured Visual Showcase: Founders Evening Wall */}
+      <section className="relative py-12 sm:py-16 bg-[#08080A] border-b border-white/5 overflow-hidden">
+        {/* Subtle radial ambient warmth */}
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(197,160,89,0.06)_0%,_transparent_70%)] pointer-events-none"></div>
+
+        <div className="max-w-5xl mx-auto px-6 sm:px-8 relative z-10">
+          <div className="relative border border-gold/30 bg-[#0E0E12] shadow-2xl overflow-hidden group">
+            <div className="relative w-full aspect-[4/3] sm:aspect-[16/10] lg:aspect-[16/9] overflow-hidden bg-black flex items-center justify-center">
+              <img
+                src={foundersEveningWallImg}
+                alt="Celebso Privé — Founders Evening"
+                className="w-full h-full object-cover object-[center_42%] group-hover:scale-[1.02] transition-transform duration-700 ease-out"
+                loading="lazy"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-black/20 pointer-events-none"></div>
+
+              {/* Discrete Corner Brand Caption */}
+              <div className="absolute bottom-5 left-6 sm:bottom-6 sm:left-8 flex items-center gap-3 pointer-events-none">
+                <span className="w-1.5 h-1.5 rounded-full bg-gold animate-pulse"></span>
+                <span className="text-[10px] sm:text-[11px] uppercase tracking-[0.3em] font-mono text-gold/90 font-medium">
+                  Celebso Privé · Founders Evening Conclave
+                </span>
+              </div>
+            </div>
           </div>
         </div>
       </section>

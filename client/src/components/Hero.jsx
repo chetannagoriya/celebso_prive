@@ -33,7 +33,7 @@ export const Hero = ({ onRequestInvitation }) => {
           </div>
 
           {/* Main Headline (All caps, classic serif, 2 lines with periods) */}
-          <h1 className="font-serif text-3xl sm:text-5xl md:text-6xl lg:text-[4rem] xl:text-[4.5rem] font-normal leading-[1.12] text-white tracking-wide drop-shadow-md">
+          <h1 className="font-serif text-2xl sm:text-4xl md:text-5xl lg:text-[3.25rem] xl:text-[3.6rem] font-normal leading-[1.16] text-white tracking-wide drop-shadow-md">
             THE RIGHT ROOM. <br />
             CHANGES EVERYTHING.
           </h1>

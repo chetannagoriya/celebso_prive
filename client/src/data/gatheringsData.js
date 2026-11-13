@@ -3,8 +3,107 @@ import pullmanDelhiImg from '../assets/pullman-delhi.jpg';
 import udaipurLakePalaceImg from '../assets/udaipur-lake-palace.jpg';
 import dubaiBurjAlArabImg from '../assets/dubai-burj-al-arab.jpg';
 import heroPalaceHdImg from '../assets/hero-palace-hd.jpg';
+import novotelDelhiCircleImg from '../assets/novotel-delhi-circle.png';
 
 export const allGatherings = [
+  {
+    id: 'celebso-prive-circle-delhi',
+    title: 'CELEBSO PRIVÉ CIRCLE',
+    subtitle: 'An Exclusive Networking & Business Experience · Novotel New Delhi',
+    tag: 'UPCOMING',
+    featured: true,
+    date: '22 NOVEMBER 2026',
+    dateSort: '2026-11-22',
+    location: 'NOVOTEL NEW DELHI AEROCITY',
+    city: 'DELHI',
+    venueAddress: 'Novotel New Delhi Aerocity, Asset No 2, Aerocity, New Delhi, Delhi 110037',
+    time: '6:00 PM – 8:00 PM',
+    eventType: 'NETWORKING & BUSINESS CONCLAVE',
+    capacity: 'Curated Guest List · Approval Required',
+    totalSeats: 50,
+    confirmedSeats: 38,
+    remainingSeats: 12,
+    tier: 'Founders, HNIs, VC Investors & Business Leaders',
+    accessContribution: 'Curated Access / Registration on Luma',
+    dressCode: 'Gala Attire / Elegant & Expressive',
+    lumaUrl: 'https://luma.com/dcg3e4gc',
+    image: novotelDelhiCircleImg,
+    isUpcoming: true,
+    description: 'An exclusive gathering of visionary founders, HNIs, VC investors, angel investors, entrepreneurs, and business leaders at Novotel New Delhi Aerocity. Designed to connect inspiring people, exchange perspectives, explore possibilities, and build meaningful professional relationships.',
+    quote: '“Connect. Collaborate. Create Impact. A space where ambition meets opportunity, ideas meet experience, and exceptional people come together.”',
+    highlights: [
+      'Closed-door networking with visionary founders, HNIs, and VC investors',
+      'Physical & Virtual participation options for curated attendees',
+      'Curated hospitality and high-level dialectics at Novotel Aerocity',
+      'Strategic collaboration corridors and commercial synergy exchanges',
+    ],
+    inclusions: [
+      'Curated Ingress & Guest Credential Clearance',
+      'High-Level Networking with Founders, HNIs & Angel/VC Investors',
+      'Executive Hospitality & Evening Refreshments at Novotel Aerocity',
+      'Access to Celebso Privé Networking Directory & Post-Event Channels',
+      'Official Luma Ticket & Invitation Confirmation Credentials',
+    ],
+    itinerary: [
+      {
+        time: '18:00',
+        stage: 'Stage 01',
+        title: 'Arrival & Executive Ingress',
+        location: 'Novotel Aerocity Reception',
+        details: 'Guest verification, issuance of attendee credentials, and welcome networking lounge.',
+      },
+      {
+        time: '18:25',
+        stage: 'Stage 02',
+        title: 'Opening Address & Welcome Note',
+        location: 'The Conclave Salon',
+        details: 'Hosted by Celebso Group & NxTFund Capital. Setting the framework for strategic collaboration and meaningful exchange.',
+      },
+      {
+        time: '18:45',
+        stage: 'Stage 03',
+        title: 'Curated Fireside & Founder Dialectics',
+        location: 'The Circle Chamber',
+        details: 'Perspectives on emerging venture capital trends, high-impact scaling, and strategic cross-border partnerships.',
+      },
+      {
+        time: '19:20',
+        stage: 'Stage 04',
+        title: 'High-Level Open Networking & Synergy Corridors',
+        location: 'Executive Lounge & Terrace',
+        details: 'Facilitated one-on-one connections between founders, angel investors, HNIs, and enterprise leaders with curated refreshments.',
+      },
+      {
+        time: '20:00',
+        stage: 'Stage 05',
+        title: 'Closing Remarks & Adjournment',
+        location: 'Novotel Aerocity',
+        details: 'Final connections, photo chronicles, and continuation through private Celebso Privé digital channels.',
+      },
+    ],
+    pillars: [
+      {
+        num: '01',
+        title: 'Connect',
+        desc: 'Bringing exceptional founders, investors, and business leaders into a trusted, high-caliber environment.',
+      },
+      {
+        num: '02',
+        title: 'Collaborate',
+        desc: 'Fostering strategic cross-industry alliances, joint ventures, and high-conviction syndications.',
+      },
+      {
+        num: '03',
+        title: 'Create Impact',
+        desc: 'Empowering transformative business outcomes, scalable enterprises, and generational value creation.',
+      },
+      {
+        num: '04',
+        title: 'Curated Exclusivity',
+        desc: 'Strict vetting and managed capacity ensuring every conversation in the room is high-signal.',
+      },
+    ],
+  },
   {
     id: 'founder-circle',
     title: 'CELEBSO FOUNDER CIRCLE',

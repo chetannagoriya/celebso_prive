@@ -265,9 +265,25 @@ export const GatheringDetailPage = ({
             </div>
 
             <div className="flex flex-wrap items-center gap-3 w-full sm:w-auto">
+              {currentGathering.lumaUrl && (
+                <a
+                  href={currentGathering.lumaUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full sm:w-auto px-6 sm:px-8 py-3 bg-gold hover:bg-gold-light text-black text-xs uppercase tracking-[0.22em] font-semibold transition-all duration-300 flex items-center justify-center gap-2 shadow-gold-subtle group"
+                >
+                  <span>REGISTER ON LUMA</span>
+                  <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                </a>
+              )}
+
               <button
                 onClick={() => setIsBookingModalOpen(true)}
-                className="w-full sm:w-auto px-6 sm:px-8 py-3 bg-gold hover:bg-gold-light text-black text-xs uppercase tracking-[0.22em] font-semibold transition-all duration-300 flex items-center justify-center gap-2 shadow-gold-subtle group"
+                className={`w-full sm:w-auto px-6 sm:px-8 py-3 ${
+                  currentGathering.lumaUrl
+                    ? 'border border-gold text-gold hover:bg-gold hover:text-black'
+                    : 'bg-gold hover:bg-gold-light text-black'
+                } text-xs uppercase tracking-[0.22em] font-semibold transition-all duration-300 flex items-center justify-center gap-2 shadow-gold-subtle group`}
               >
                 <span>BOOK YOUR SEAT NOW</span>
                 <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
@@ -584,6 +600,26 @@ export const GatheringDetailPage = ({
                 <span className="text-amber-400 font-medium">Only {seatsRemaining} seats left</span>
               </div>
             </div>
+
+            {currentGathering.lumaUrl && (
+              <div className="mb-5 p-4 border border-gold/40 bg-gold/5 space-y-3">
+                <div className="flex items-center justify-between">
+                  <span className="text-[10px] font-mono tracking-widest text-gold uppercase font-semibold">
+                    Official Luma Ingress
+                  </span>
+                  <span className="text-[10px] text-zinc-400 font-mono">lu.ma/dcg3e4gc</span>
+                </div>
+                <a
+                  href={currentGathering.lumaUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full py-2.5 bg-gold hover:bg-gold-light text-black text-[11px] uppercase tracking-[0.2em] font-semibold transition-all duration-300 flex items-center justify-center gap-2 shadow-gold-subtle"
+                >
+                  <span>REGISTER ON LUMA</span>
+                  <ArrowRight className="w-3.5 h-3.5" />
+                </a>
+              </div>
+            )}
 
             {/* INLINE BOOKING FORM OR CONFIRMED DOCKET */}
             {inlineStep === 1 && (

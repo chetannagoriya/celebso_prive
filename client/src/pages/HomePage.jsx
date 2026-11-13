@@ -2,7 +2,6 @@ import React from 'react';
 import Hero from '../components/Hero';
 import StatsBar from '../components/StatsBar';
 import PrivateByDesign from '../components/PrivateByDesign';
-import BespokeSalons from '../components/BespokeSalons';
 import TheSettingSection from '../components/TheSettingSection';
 import ThePeopleSection from '../components/ThePeopleSection';
 import WhoAttendsSection from '../components/WhoAttendsSection';
@@ -27,9 +26,6 @@ export const HomePage = ({ onNavigate, onRequestInvitation, onOpenPartner, onOpe
         onRequestInvitation={onRequestInvitation}
         onOpenProcess={onOpenProcess}
       />
-
-      {/* Three Bespoke Salons */}
-      <BespokeSalons onRequestInvitation={onRequestInvitation} />
 
       {/* The Setting: Designed for consequence (From thecatalystcollective.in) */}
       <TheSettingSection />
