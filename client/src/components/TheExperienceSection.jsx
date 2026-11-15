@@ -28,27 +28,27 @@ export const TheExperienceSection = () => {
   ];
 
   return (
-    <section id="experience" className="relative py-20 lg:py-28 bg-[#09090C] border-t border-white/5 overflow-hidden">
+    <section id="experience" className="relative py-14 sm:py-20 lg:py-28 bg-[#09090C] border-t border-white/5 overflow-hidden">
       {/* Background ambient radial glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] bg-gold/5 rounded-full blur-[180px] pointer-events-none"></div>
 
-      <div className="relative max-w-6xl mx-auto px-6 sm:px-8">
+      <div className="relative max-w-6xl mx-auto px-5 sm:px-8">
         {/* Section Header */}
-        <div className="text-center mb-12 lg:mb-16">
-          <div className="w-12 h-[1px] bg-gradient-to-r from-transparent via-[#C9A96E] to-transparent mx-auto mb-7"></div>
-          <p className="text-gold text-[11px] tracking-[0.45em] uppercase font-sans mb-5 font-medium">
+        <div className="text-center mb-10 lg:mb-16">
+          <div className="w-12 h-[1px] bg-gradient-to-r from-transparent via-[#C9A96E] to-transparent mx-auto mb-5 sm:mb-7"></div>
+          <p className="text-gold text-[10px] sm:text-[11px] tracking-[0.35em] sm:tracking-[0.45em] uppercase font-sans mb-4 sm:mb-5 font-medium">
             The Evening
           </p>
-          <h2 className="font-serif text-5xl sm:text-7xl lg:text-[5.5rem] font-light text-white mb-6 leading-tight tracking-tight">
+          <h2 className="font-serif text-3xl sm:text-5xl lg:text-[5.5rem] font-light text-white mb-4 sm:mb-6 leading-tight tracking-tight">
             The Experience
           </h2>
-          <p className="font-sans text-sm sm:text-base text-white/45 max-w-xl mx-auto leading-relaxed font-light">
+          <p className="font-sans text-xs sm:text-base text-white/45 max-w-xl mx-auto leading-relaxed font-light">
             Set within the ballroom environment of Novotel Hotel, New Delhi, the evening is designed to feel rare, private, and deeply intentional.
           </p>
         </div>
 
         {/* 2 Side-by-side Cinematic Frames */}
-        <div className="mb-10 grid grid-cols-1 md:grid-cols-2 gap-5">
+        <div className="mb-8 sm:mb-10 grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-5">
           <div className="relative overflow-hidden aspect-[4/3] bg-black/60 border border-white/10 shadow-2xl group">
             <img
               src={experienceEstateImg || '/experience-lounge-gathering.jpg'}
@@ -81,21 +81,21 @@ export const TheExperienceSection = () => {
         </div>
 
         {/* 4 Pillars with Icons */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
           {experiences.map((exp, idx) => {
             const Icon = exp.icon;
             return (
               <div
                 key={idx}
-                className="p-8 sm:p-10 border border-white/10 bg-gradient-to-br from-white/[0.04] to-transparent hover:border-gold/40 transition-all duration-500 relative group overflow-hidden text-center"
+                className="p-6 sm:p-10 border border-white/10 bg-gradient-to-br from-white/[0.04] to-transparent hover:border-gold/40 transition-all duration-500 relative group overflow-hidden text-center"
               >
-                <div className="relative z-10 inline-flex items-center justify-center w-14 h-14 mb-8 border border-white/10 text-white/40 group-hover:border-gold/50 group-hover:text-gold transition-all duration-500 rounded-sm">
+                <div className="relative z-10 inline-flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 mb-5 sm:mb-8 border border-white/10 text-white/40 group-hover:border-gold/50 group-hover:text-gold transition-all duration-500 rounded-sm">
                   <Icon className="w-5 h-5 stroke-[1.5]" />
                 </div>
-                <h3 className="font-serif text-xl sm:text-2xl text-white/90 mb-4 relative z-10 font-light group-hover:text-gold transition-colors duration-300">
+                <h3 className="font-serif text-lg sm:text-2xl text-white/90 mb-3 sm:mb-4 relative z-10 font-light group-hover:text-gold transition-colors duration-300">
                   {exp.title}
                 </h3>
-                <p className="font-sans text-sm text-white/40 leading-relaxed relative z-10 font-light">
+                <p className="font-sans text-xs sm:text-sm text-white/40 leading-relaxed relative z-10 font-light">
                   {exp.desc}
                 </p>
               </div>

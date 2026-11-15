@@ -30,15 +30,15 @@ export const PastGuestsPage = ({ onNavigate, onRequestInvitation }) => {
   ];
 
   return (
-    <div className="pt-32 pb-24 px-6 sm:px-8 max-w-7xl mx-auto">
+    <div className="pt-28 sm:pt-32 pb-16 sm:pb-24 px-4 sm:px-8 max-w-7xl mx-auto">
       {/* Top Editorial Header */}
-      <div className="text-center max-w-3xl mx-auto mb-14 space-y-4">
+      <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-14 space-y-4">
         <div className="inline-flex items-center gap-2 px-3.5 py-1.5 border border-gold/30 bg-gold/5 text-gold text-[10px] sm:text-[11px] tracking-[0.25em] uppercase font-medium">
           <Users className="w-3.5 h-3.5" />
           <span>The People Behind The Gatherings</span>
         </div>
 
-        <h1 className="font-serif text-3xl sm:text-5xl lg:text-6xl text-white font-normal tracking-tight">
+        <h1 className="font-serif text-2xl sm:text-5xl lg:text-6xl text-white font-normal tracking-tight">
           Past Guests & <span className="gold-gradient-text italic font-normal">Ecosystem Leaders</span>
         </h1>
 
@@ -54,27 +54,27 @@ export const PastGuestsPage = ({ onNavigate, onRequestInvitation }) => {
         </div>
 
         {/* Counter & Category Pill */}
-        <div className="flex items-center justify-center gap-4 text-xs pt-1">
+        <div className="flex items-center justify-center gap-3 sm:gap-4 text-xs pt-1 flex-wrap">
           <div className="flex items-baseline gap-1.5">
             <span className="font-serif text-xl sm:text-2xl text-gold font-normal">12</span>
             <span className="text-[10px] tracking-widest uppercase text-zinc-400 font-mono">PROFILES</span>
           </div>
-          <span className="text-zinc-700">|</span>
-          <span className="text-[10px] sm:text-[11px] tracking-[0.22em] uppercase text-zinc-300 font-mono">
+          <span className="text-zinc-700 hidden sm:inline">|</span>
+          <span className="text-[10px] sm:text-[11px] tracking-[0.22em] uppercase text-zinc-300 font-mono text-center">
             FOUNDERS · INVESTORS · INDUSTRY LEADERS
           </span>
         </div>
       </div>
 
       {/* 12 Profile Cards Grid (2 Columns) */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-5 max-w-5xl mx-auto mb-16">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-5 max-w-5xl mx-auto mb-12 sm:mb-16">
         {guests.map((guest, idx) => (
           <div
             key={idx}
-            className="bg-[#101014] border border-white/5 hover:border-gold/40 transition-all duration-300 rounded-lg p-3 sm:p-4 flex items-center gap-4 sm:gap-5 group"
+            className="bg-[#101014] border border-white/5 hover:border-gold/40 transition-all duration-300 rounded-lg p-3 sm:p-4 flex items-center gap-3.5 sm:gap-5 group"
           >
             {/* Guest Portrait */}
-            <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-md overflow-hidden flex-shrink-0 border border-white/10 group-hover:border-gold/40 transition-colors bg-black/40">
+            <div className="w-20 h-20 sm:w-28 sm:h-28 rounded-md overflow-hidden flex-shrink-0 border border-white/10 group-hover:border-gold/40 transition-colors bg-black/40">
               <img
                 src={guest.image}
                 alt={guest.name}
@@ -112,7 +112,7 @@ export const PastGuestsPage = ({ onNavigate, onRequestInvitation }) => {
         <div className="pt-2">
           <button
             onClick={() => onNavigate('gatherings')}
-            className="inline-flex items-center gap-2 bg-[#C5A059] hover:bg-[#d6b066] text-[#0A0A0C] px-8 py-3 text-xs uppercase tracking-[0.2em] font-semibold transition-all shadow-gold-glow hover:scale-[1.02] active:scale-[0.98]"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#C5A059] hover:bg-[#d6b066] text-[#0A0A0C] px-6 sm:px-8 py-3 text-xs uppercase tracking-[0.2em] font-semibold transition-all shadow-gold-glow hover:scale-[1.02] active:scale-[0.98] text-center"
           >
             <span>EXPLORE UPCOMING GATHERINGS</span>
             <ArrowRight className="w-3.5 h-3.5" />

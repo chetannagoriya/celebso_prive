@@ -55,15 +55,15 @@ export const Navbar = ({
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           scrolled
-            ? 'bg-[#0A0A0C]/95 backdrop-blur-md border-b border-gold/15 py-4 shadow-lg shadow-black/50'
-            : 'bg-gradient-to-b from-black/90 via-black/50 to-transparent py-5 sm:py-6'
+            ? 'bg-[#0A0A0C]/95 backdrop-blur-md border-b border-gold/15 py-3.5 sm:py-4 shadow-lg shadow-black/50'
+            : 'bg-gradient-to-b from-black/90 via-black/50 to-transparent py-4 sm:py-6'
         }`}
       >
-        <div className="max-w-7xl mx-auto px-5 sm:px-8 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-4 sm:px-8 flex items-center justify-between">
           {/* Brand Logo - Exact styling from image */}
           <button
             onClick={() => handleNavClick('home')}
-            className="flex flex-col items-center sm:items-start text-left group focus:outline-none"
+            className="flex flex-col items-start text-left group focus:outline-none"
           >
             <span className="font-serif text-lg sm:text-2xl tracking-[0.22em] text-[#ECEAE4] group-hover:text-gold-light transition-colors font-medium">
               CELEBSO
@@ -97,7 +97,7 @@ export const Navbar = ({
           </nav>
 
           {/* Right Action Controls: Request Invitation + Circular Hamburger */}
-          <div className="flex items-center space-x-3 sm:space-x-4">
+          <div className="flex items-center space-x-2 sm:space-x-4">
             {/* Request Invitation Button (Gold Border Outline as in screenshot) */}
             <button
               onClick={() => {
@@ -107,7 +107,7 @@ export const Navbar = ({
                   handleNavClick('request-invitation');
                 }
               }}
-              className="relative group border border-gold/75 hover:border-gold px-3.5 sm:px-5 py-2 text-[10px] sm:text-[11px] uppercase tracking-[0.22em] text-gold font-medium transition-all duration-300 hover:bg-gold hover:text-black shadow-sm hover:shadow-gold-subtle whitespace-nowrap"
+              className="relative group border border-gold/75 hover:border-gold px-2.5 sm:px-5 py-1.5 sm:py-2 text-[9px] sm:text-[11px] uppercase tracking-[0.16em] sm:tracking-[0.22em] text-gold font-medium transition-all duration-300 hover:bg-gold hover:text-black shadow-sm hover:shadow-gold-subtle whitespace-nowrap"
             >
               Request Invitation
             </button>
@@ -115,7 +115,7 @@ export const Navbar = ({
             {/* Circular Hamburger Menu Button (Circle with gold border as in screenshot) */}
             <button
               onClick={() => setDrawerOpen(!drawerOpen)}
-              className="w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-gold/75 hover:border-gold flex items-center justify-center text-gold hover:bg-gold/15 transition-all duration-300 focus:outline-none"
+              className="w-8 h-8 sm:w-10 sm:h-10 rounded-full border border-gold/75 hover:border-gold flex items-center justify-center text-gold hover:bg-gold/15 transition-all duration-300 focus:outline-none flex-shrink-0"
               aria-label="Toggle navigation drawer"
               title="Full Sovereign Navigation & All 12 Pages"
             >
@@ -132,7 +132,7 @@ export const Navbar = ({
       {/* Full Sovereign Navigation Drawer (Lists all 12 Pages & Chapters) */}
       {drawerOpen && (
         <div className="fixed inset-0 z-40 bg-black/80 backdrop-blur-xl animate-fadeIn">
-          <div className="fixed inset-y-0 right-0 w-full max-w-xl bg-[#0D0D11] border-l border-gold/25 p-6 sm:p-10 overflow-y-auto flex flex-col justify-between shadow-2xl">
+          <div className="fixed inset-y-0 right-0 w-full max-w-xl bg-[#0D0D11] border-l border-gold/25 p-5 sm:p-10 overflow-y-auto flex flex-col justify-between shadow-2xl">
             {/* Drawer Header */}
             <div>
               <div className="flex items-center justify-between pb-6 border-b border-white/10">
@@ -198,9 +198,9 @@ export const Navbar = ({
 
             {/* Drawer Footer Actions */}
             <div className="pt-6 border-t border-white/10 space-y-4">
-              <div className="flex items-center justify-between text-xs text-zinc-400">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1 text-xs text-zinc-400">
                 <span className="uppercase tracking-widest text-[10px] text-gold">Chapters:</span>
-                <span className="font-mono text-[10px]">JAIPUR · DUBAI · LONDON · ZURICH · DOHA</span>
+                <span className="font-mono text-[9px] sm:text-[10px] text-zinc-400">JAIPUR · DUBAI · LONDON · ZURICH · DOHA</span>
               </div>
 
               <div className="flex gap-3">

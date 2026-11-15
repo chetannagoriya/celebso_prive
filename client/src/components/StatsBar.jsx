@@ -2,13 +2,13 @@ import React from 'react';
 
 export const StatsBar = () => {
   return (
-    <section className="relative py-24 sm:py-32 lg:py-36 bg-[#08080A] border-y border-white/5 overflow-hidden">
+    <section className="relative py-16 sm:py-28 lg:py-36 bg-[#08080A] border-y border-white/5 overflow-hidden">
       {/* Subtle radial ambient warmth in background */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(197,160,89,0.06)_0%,_transparent_70%)] pointer-events-none"></div>
 
-      <div className="relative z-10 max-w-5xl mx-auto px-6 sm:px-8 text-center space-y-7 sm:space-y-9">
+      <div className="relative z-10 max-w-5xl mx-auto px-5 sm:px-8 text-center space-y-5 sm:space-y-8">
         {/* Top Statement: Pure Elegant White Serif */}
-        <h2 className="font-serif text-2xl sm:text-4xl md:text-5xl lg:text-[50px] font-normal text-white/95 leading-[1.28] tracking-wide max-w-4xl mx-auto drop-shadow-sm">
+        <h2 className="font-serif text-xl sm:text-3xl md:text-5xl lg:text-[50px] font-normal text-white/95 leading-[1.3] tracking-wide max-w-4xl mx-auto drop-shadow-sm">
           The most meaningful connections happen in <br className="hidden sm:inline" />
           the right room.
         </h2>
@@ -19,7 +19,7 @@ export const StatsBar = () => {
         </div>
 
         {/* Bottom Statement: Italic Warm Gold Serif */}
-        <p className="font-serif italic text-xl sm:text-3xl md:text-4xl lg:text-[42px] font-light text-[#C9A86E] leading-[1.32] tracking-wide max-w-4xl mx-auto drop-shadow-sm">
+        <p className="font-serif italic text-lg sm:text-2xl md:text-4xl lg:text-[42px] font-light text-[#C9A86E] leading-[1.32] tracking-wide max-w-4xl mx-auto drop-shadow-sm">
           When the right people come together, remarkable <br className="hidden sm:inline" />
           things emerge.
         </p>

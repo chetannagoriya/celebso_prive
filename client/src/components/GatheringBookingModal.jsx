@@ -105,19 +105,19 @@ export const GatheringBookingModal = ({ isOpen, onClose, gathering }) => {
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md animate-fadeIn">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-black/85 backdrop-blur-md animate-fadeIn">
       <div className="relative w-full max-w-2xl bg-[#0F0F14] border border-gold/40 shadow-2xl overflow-hidden max-h-[92vh] flex flex-col">
         {/* Top Header */}
-        <div className="flex items-center justify-between px-6 sm:px-8 py-4 border-b border-white/10 bg-[#0A0A0E] flex-shrink-0">
+        <div className="flex items-center justify-between px-5 sm:px-8 py-3.5 sm:py-4 border-b border-white/10 bg-[#0A0A0E] flex-shrink-0">
           <div className="flex items-center gap-3">
             <div className="w-8 h-8 rounded-none border border-gold/60 flex items-center justify-center text-gold bg-gold/10 text-xs font-serif font-bold">
               C
             </div>
             <div>
-              <h3 className="font-serif text-sm sm:text-base uppercase tracking-[0.22em] text-white font-medium">
+              <h3 className="font-serif text-xs sm:text-base uppercase tracking-[0.2em] sm:tracking-[0.22em] text-white font-medium">
                 Sovereign Seat Reservation
               </h3>
-              <p className="text-[10px] tracking-wider uppercase text-gold/80 font-mono">
+              <p className="text-[9px] sm:text-[10px] tracking-wider uppercase text-gold/80 font-mono">
                 {gathering.title} · {gathering.city}
               </p>
             </div>
@@ -132,7 +132,7 @@ export const GatheringBookingModal = ({ isOpen, onClose, gathering }) => {
         </div>
 
         {/* Gathering Context Ribbon */}
-        <div className="bg-[#14141B] px-6 sm:px-8 py-3 border-b border-white/5 flex flex-wrap items-center justify-between gap-3 text-xs flex-shrink-0">
+        <div className="bg-[#14141B] px-5 sm:px-8 py-2.5 sm:py-3 border-b border-white/5 flex flex-wrap items-center justify-between gap-2.5 text-xs flex-shrink-0">
           <div className="flex items-center gap-4 text-zinc-300">
             <span className="flex items-center gap-1.5 text-gold font-medium">
               <Calendar className="w-3.5 h-3.5" />
@@ -151,7 +151,7 @@ export const GatheringBookingModal = ({ isOpen, onClose, gathering }) => {
         </div>
 
         {/* Modal Scrollable Body */}
-        <div className="overflow-y-auto p-6 sm:p-8 flex-grow space-y-6">
+        <div className="overflow-y-auto p-5 sm:p-8 flex-grow space-y-6">
           {step === 1 && (
             <form onSubmit={() => setStep(2)} className="space-y-5">
               <div className="border-b border-white/10 pb-4">

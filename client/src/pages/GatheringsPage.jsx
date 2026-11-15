@@ -201,7 +201,7 @@ export const GatheringsPage = ({ onNavigate, onRequestInvitation, onSelectGather
                   </div>
 
                   {/* Right Column: Details */}
-                  <div className="lg:col-span-6 p-7 sm:p-10 flex flex-col justify-between space-y-6">
+                  <div className="lg:col-span-6 p-5 sm:p-8 lg:p-10 flex flex-col justify-between space-y-5 sm:space-y-6">
                     <div className="space-y-3">
                       {/* Status Tag */}
                       <div className="flex items-center justify-between">
@@ -251,19 +251,19 @@ export const GatheringsPage = ({ onNavigate, onRequestInvitation, onSelectGather
                     </div>
 
                     {/* Bottom Row: Private Event Tag & Action Button */}
-                    <div className="pt-6 border-t border-white/10 flex items-center justify-between gap-4">
+                    <div className="pt-5 sm:pt-6 border-t border-white/10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
                       <div className="flex items-center gap-2 text-[10px] uppercase tracking-[0.25em] text-zinc-400 font-mono">
                         <span className="w-1.5 h-1.5 rounded-full bg-gold animate-pulse"></span>
                         <span>{item.eventType}</span>
                       </div>
 
-                      <div className="flex items-center gap-2 sm:gap-3">
+                      <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2 sm:gap-3 w-full sm:w-auto">
                         {item.lumaUrl && (
                           <a
                             href={item.lumaUrl}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="border border-gold bg-gold hover:bg-gold-light text-black px-4 sm:px-5 py-2.5 text-[10px] sm:text-[11px] uppercase tracking-[0.22em] font-semibold transition-all duration-300 flex items-center gap-2 shadow-sm whitespace-nowrap"
+                            className="border border-gold bg-gold hover:bg-gold-light text-black px-4 sm:px-5 py-2.5 text-[10px] sm:text-[11px] uppercase tracking-[0.22em] font-semibold transition-all duration-300 flex items-center justify-center gap-2 shadow-sm whitespace-nowrap text-center"
                           >
                             <span>REGISTER ON LUMA</span>
                             <ArrowRight className="w-3.5 h-3.5" />
@@ -278,7 +278,7 @@ export const GatheringsPage = ({ onNavigate, onRequestInvitation, onSelectGather
                             item.lumaUrl
                               ? 'border border-white/20 hover:border-gold/60 text-zinc-300 hover:text-white'
                               : 'border border-gold/70 hover:border-gold text-gold hover:bg-gold hover:text-black'
-                          } px-4 sm:px-6 py-2.5 text-[10px] sm:text-[11px] uppercase tracking-[0.22em] font-medium transition-all duration-300 flex items-center gap-2 shadow-sm whitespace-nowrap group/btn`}
+                          } px-4 sm:px-6 py-2.5 text-[10px] sm:text-[11px] uppercase tracking-[0.22em] font-medium transition-all duration-300 flex items-center justify-center gap-2 shadow-sm whitespace-nowrap group/btn text-center`}
                         >
                           <span>VIEW GATHERING</span>
                           <ArrowRight className="w-3.5 h-3.5 group-hover/btn:translate-x-1 transition-transform" />

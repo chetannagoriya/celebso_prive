@@ -169,15 +169,15 @@ export const GatheringDetailPage = ({
           <div className="absolute inset-0 bg-gradient-to-r from-black via-black/85 to-transparent"></div>
         </div>
 
-        <div className="relative z-10 p-6 sm:p-10 lg:p-12">
+        <div className="relative z-10 p-5 sm:p-10 lg:p-12">
           {/* Top Status Badges */}
-          <div className="flex flex-wrap items-center justify-between gap-4 mb-6">
-            <div className="inline-flex items-center gap-2 px-3 py-1 border border-gold/50 bg-gold/10 text-gold text-[10px] tracking-[0.25em] uppercase font-mono">
+          <div className="flex flex-wrap items-center justify-between gap-3 sm:gap-4 mb-6">
+            <div className="inline-flex items-center gap-2 px-3 py-1 border border-gold/50 bg-gold/10 text-gold text-[9px] sm:text-[10px] tracking-[0.25em] uppercase font-mono">
               <Lock className="w-3 h-3" />
               <span>CONFIDENTIAL DOSSIER · {currentGathering.eventType}</span>
             </div>
 
-            <div className="inline-flex items-center gap-2.5 px-3 py-1 border border-amber-500/40 bg-amber-500/10 text-amber-300 text-xs font-mono">
+            <div className="inline-flex items-center gap-2.5 px-3 py-1 border border-amber-500/40 bg-amber-500/10 text-amber-300 text-[11px] sm:text-xs font-mono">
               <span className="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
               <span>
                 {seatsConfirmed} OF {totalSeats} SEATS CONFIRMED ·{' '}
@@ -188,19 +188,19 @@ export const GatheringDetailPage = ({
 
           {/* Main Title & Subtitle */}
           <div className="max-w-4xl space-y-3 mb-6">
-            <span className="text-xs uppercase tracking-[0.3em] font-mono text-gold font-medium block">
+            <span className="text-[10px] sm:text-xs uppercase tracking-[0.3em] font-mono text-gold font-medium block">
               {currentGathering.subtitle || 'EXCLUSIVE PRIVATE CONCLAVE'}
             </span>
-            <h1 className="font-serif text-3xl sm:text-5xl lg:text-6xl text-white font-normal leading-[1.15] tracking-wide">
+            <h1 className="font-serif text-2xl sm:text-5xl lg:text-6xl text-white font-normal leading-[1.15] tracking-wide">
               {currentGathering.title}
             </h1>
-            <p className="font-serif text-base sm:text-xl text-zinc-300 italic font-light max-w-3xl leading-relaxed pt-1">
+            <p className="font-serif text-sm sm:text-xl text-zinc-300 italic font-light max-w-3xl leading-relaxed pt-1">
               {currentGathering.quote || currentGathering.description}
             </p>
           </div>
 
           {/* Quick Meta Grid */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-5 pt-6 border-t border-white/10 text-xs">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3.5 sm:gap-5 pt-6 border-t border-white/10 text-xs">
             <div>
               <p className="text-[10px] uppercase tracking-[0.22em] text-gold font-medium mb-1">Chapter</p>
               <p className="text-white font-medium flex items-center gap-1.5">
@@ -264,13 +264,13 @@ export const GatheringDetailPage = ({
               )}
             </div>
 
-            <div className="flex flex-wrap items-center gap-3 w-full sm:w-auto">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full sm:w-auto">
               {currentGathering.lumaUrl && (
                 <a
                   href={currentGathering.lumaUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full sm:w-auto px-6 sm:px-8 py-3 bg-gold hover:bg-gold-light text-black text-xs uppercase tracking-[0.22em] font-semibold transition-all duration-300 flex items-center justify-center gap-2 shadow-gold-subtle group"
+                  className="w-full sm:w-auto px-6 sm:px-8 py-3 bg-gold hover:bg-gold-light text-black text-xs uppercase tracking-[0.22em] font-semibold transition-all duration-300 flex items-center justify-center gap-2 shadow-gold-subtle group text-center"
                 >
                   <span>REGISTER ON LUMA</span>
                   <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
@@ -283,7 +283,7 @@ export const GatheringDetailPage = ({
                   currentGathering.lumaUrl
                     ? 'border border-gold text-gold hover:bg-gold hover:text-black'
                     : 'bg-gold hover:bg-gold-light text-black'
-                } text-xs uppercase tracking-[0.22em] font-semibold transition-all duration-300 flex items-center justify-center gap-2 shadow-gold-subtle group`}
+                } text-xs uppercase tracking-[0.22em] font-semibold transition-all duration-300 flex items-center justify-center gap-2 shadow-gold-subtle group text-center`}
               >
                 <span>BOOK YOUR SEAT NOW</span>
                 <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
@@ -297,7 +297,7 @@ export const GatheringDetailPage = ({
                     onNavigate('request-invitation');
                   }
                 }}
-                className="w-full sm:w-auto px-5 py-3 border border-white/20 hover:border-gold/60 text-zinc-300 hover:text-white text-xs uppercase tracking-[0.2em] font-medium transition-colors"
+                className="w-full sm:w-auto px-5 py-3 border border-white/20 hover:border-gold/60 text-zinc-300 hover:text-white text-xs uppercase tracking-[0.2em] font-medium transition-colors text-center"
               >
                 Request Petition
               </button>

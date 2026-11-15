@@ -76,11 +76,11 @@ export const AboutUsPage = ({ onNavigate, onRequestInvitation }) => {
   return (
     <div className="bg-[#0A0A0C] text-zinc-100 min-h-screen selection:bg-gold selection:text-black">
       {/* 1. Hero / Editorial Header */}
-      <section className="relative pt-36 pb-20 sm:pb-24 border-b border-white/5 overflow-hidden">
+      <section className="relative pt-28 sm:pt-36 pb-16 sm:pb-24 border-b border-white/5 overflow-hidden">
         {/* Subtle background ambient light */}
         <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-gold/5 blur-[120px] rounded-full pointer-events-none"></div>
 
-        <div className="max-w-4xl mx-auto px-6 sm:px-8 text-center space-y-6 relative z-10">
+        <div className="max-w-4xl mx-auto px-5 sm:px-8 text-center space-y-5 sm:space-y-6 relative z-10">
           {/* Eyebrow */}
           <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 border border-gold/30 bg-gold/5 text-gold text-[10px] sm:text-[11px] tracking-[0.3em] uppercase font-semibold">
             <Compass className="w-3.5 h-3.5 text-gold" />
@@ -88,28 +88,28 @@ export const AboutUsPage = ({ onNavigate, onRequestInvitation }) => {
           </div>
 
           {/* Main Headline */}
-          <h1 className="font-serif text-4xl sm:text-6xl lg:text-7xl text-white font-normal tracking-tight leading-[1.08]">
+          <h1 className="font-serif text-3xl sm:text-6xl lg:text-7xl text-white font-normal tracking-tight leading-[1.1]">
             About <span className="gold-metallic-text italic">Celebso Privé</span>
           </h1>
 
           {/* Pullquote */}
-          <blockquote className="max-w-3xl mx-auto py-3">
-            <p className="font-serif text-lg sm:text-2xl text-zinc-200 italic font-light leading-relaxed">
+          <blockquote className="max-w-3xl mx-auto py-2 sm:py-3">
+            <p className="font-serif text-base sm:text-2xl text-zinc-200 italic font-light leading-relaxed">
               “Bringing ambitious founders, investors, and business leaders together through meaningful conversations, trusted relationships, and a shared vision for growth.”
             </p>
           </blockquote>
 
           {/* Action CTAs */}
-          <div className="pt-4 flex items-center justify-center gap-4">
+          <div className="pt-3 sm:pt-4 flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 sm:gap-4 w-full sm:w-auto">
             <button
               onClick={onRequestInvitation}
-              className="bg-gold hover:bg-gold-light text-[#0A0A0C] px-8 py-3.5 text-xs uppercase tracking-[0.24em] font-semibold transition-all duration-300 shadow-gold-glow"
+              className="bg-gold hover:bg-gold-light text-[#0A0A0C] px-8 py-3.5 text-xs uppercase tracking-[0.24em] font-semibold transition-all duration-300 shadow-gold-glow text-center"
             >
               Request Invitation
             </button>
             <button
               onClick={() => onNavigate('gatherings')}
-              className="border border-white/20 hover:border-gold text-zinc-300 hover:text-gold px-7 py-3.5 text-xs uppercase tracking-[0.22em] font-medium transition-colors"
+              className="border border-white/20 hover:border-gold text-zinc-300 hover:text-gold px-7 py-3.5 text-xs uppercase tracking-[0.22em] font-medium transition-colors text-center"
             >
               Explore Gatherings
             </button>
@@ -118,9 +118,9 @@ export const AboutUsPage = ({ onNavigate, onRequestInvitation }) => {
       </section>
 
       {/* 2. THE GENESIS: Why Celebso Privé Was Born */}
-      <section className="py-20 sm:py-28 border-b border-white/5 bg-[#08080A]">
-        <div className="max-w-4xl mx-auto px-6 sm:px-8">
-          <div className="border border-gold/30 bg-gradient-to-b from-[#121217] via-[#0E0E12] to-black p-8 sm:p-14 lg:p-16 shadow-2xl relative overflow-hidden">
+      <section className="py-14 sm:py-24 border-b border-white/5 bg-[#08080A]">
+        <div className="max-w-4xl mx-auto px-5 sm:px-8">
+          <div className="border border-gold/30 bg-gradient-to-b from-[#121217] via-[#0E0E12] to-black p-6 sm:p-14 lg:p-16 shadow-2xl relative overflow-hidden">
             {/* Ambient corner accent */}
             <div className="absolute top-0 right-0 w-48 h-48 bg-gold/5 rounded-full blur-3xl pointer-events-none"></div>
 
@@ -132,7 +132,7 @@ export const AboutUsPage = ({ onNavigate, onRequestInvitation }) => {
                 </p>
               </div>
 
-              <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-white font-normal leading-tight">
+              <h2 className="font-serif text-2xl sm:text-4xl lg:text-5xl text-white font-normal leading-tight">
                 Why Celebso Privé Was Born
               </h2>
 
@@ -289,8 +289,8 @@ export const AboutUsPage = ({ onNavigate, onRequestInvitation }) => {
       </section>
 
       {/* 6. THE NEXT CHAPTER (Call to Action) */}
-      <section className="py-20 sm:py-28 bg-[#08080A]">
-        <div className="max-w-4xl mx-auto px-6 sm:px-8 text-center space-y-8">
+      <section className="py-14 sm:py-28 bg-[#08080A]">
+        <div className="max-w-4xl mx-auto px-5 sm:px-8 text-center space-y-6 sm:space-y-8">
           <div className="inline-flex items-center gap-2">
             <span className="w-6 h-[1px] bg-gold"></span>
             <p className="text-[11px] font-sans font-semibold tracking-[0.3em] uppercase text-gold">
@@ -299,7 +299,7 @@ export const AboutUsPage = ({ onNavigate, onRequestInvitation }) => {
             <span className="w-6 h-[1px] bg-gold"></span>
           </div>
 
-          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-white font-normal leading-tight">
+          <h2 className="font-serif text-2xl sm:text-4xl lg:text-5xl text-white font-normal leading-tight">
             Every meaningful relationship begins with a conversation.
           </h2>
 
@@ -310,7 +310,7 @@ export const AboutUsPage = ({ onNavigate, onRequestInvitation }) => {
           <div className="pt-2">
             <button
               onClick={onRequestInvitation}
-              className="bg-gold hover:bg-gold-light text-[#0A0A0C] px-10 py-4 text-xs uppercase tracking-[0.26em] font-semibold transition-all duration-300 shadow-gold-glow inline-flex items-center gap-3"
+              className="w-full sm:w-auto bg-gold hover:bg-gold-light text-[#0A0A0C] px-8 sm:px-10 py-3.5 sm:py-4 text-xs uppercase tracking-[0.22em] sm:tracking-[0.26em] font-semibold transition-all duration-300 shadow-gold-glow inline-flex items-center justify-center gap-3"
             >
               <span>REQUEST AN INVITATION</span>
               <ArrowRight className="w-4 h-4" />

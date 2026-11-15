@@ -74,19 +74,19 @@ export const PetitionModal = ({ isOpen, onClose }) => {
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md animate-fadeIn">
-      <div className="relative w-full max-w-2xl bg-[#111116] border border-gold/40 shadow-2xl overflow-hidden">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-black/85 backdrop-blur-md animate-fadeIn">
+      <div className="relative w-full max-w-2xl bg-[#111116] border border-gold/40 shadow-2xl overflow-hidden max-h-[92vh] flex flex-col">
         {/* Modal Top Bar */}
-        <div className="flex items-center justify-between px-8 py-5 border-b border-white/10 bg-[#0E0E12]">
+        <div className="flex items-center justify-between px-5 sm:px-8 py-4 sm:py-5 border-b border-white/10 bg-[#0E0E12] flex-shrink-0">
           <div className="flex items-center gap-3">
             <div className="w-6 h-6 rounded-full border border-gold/60 flex items-center justify-center text-gold text-[10px]">
               ⚜️
             </div>
             <div>
-              <h3 className="font-serif text-sm uppercase tracking-[0.25em] text-white">
+              <h3 className="font-serif text-xs sm:text-sm uppercase tracking-[0.2em] sm:tracking-[0.25em] text-white">
                 Petition For Inclusion
               </h3>
-              <p className="text-[9px] uppercase tracking-widest text-gold/80 font-mono">
+              <p className="text-[8.5px] sm:text-[9px] uppercase tracking-widest text-gold/80 font-mono">
                 High Advisory Board · Protocol Tier
               </p>
             </div>
@@ -101,7 +101,7 @@ export const PetitionModal = ({ isOpen, onClose }) => {
 
         {/* Progress Tracker (Steps 1 to 3) */}
         {step < 4 && (
-          <div className="px-8 pt-4 pb-2 bg-[#0C0C10] border-b border-white/5 flex items-center justify-between text-[10px] tracking-widest uppercase font-mono">
+          <div className="px-5 sm:px-8 pt-3 pb-2 bg-[#0C0C10] border-b border-white/5 flex items-center justify-between text-[9px] sm:text-[10px] tracking-widest uppercase font-mono flex-shrink-0">
             <span className={step >= 1 ? 'text-gold' : 'text-zinc-600'}>
               01. Identity
             </span>
@@ -117,7 +117,7 @@ export const PetitionModal = ({ isOpen, onClose }) => {
         )}
 
         {/* Modal Body */}
-        <div className="p-8 max-h-[75vh] overflow-y-auto">
+        <div className="p-5 sm:p-8 overflow-y-auto flex-1">
           {errorMsg && (
             <div className="mb-4 p-3 bg-red-950/60 border border-red-700/50 text-red-300 text-xs">
               {errorMsg}

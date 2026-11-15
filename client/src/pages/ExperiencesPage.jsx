@@ -97,14 +97,14 @@ export const ExperiencesPage = ({ onNavigate, onRequestInvitation }) => {
   ];
 
   return (
-    <div className="pt-32 pb-24 px-6 sm:px-8 max-w-7xl mx-auto">
+    <div className="pt-28 sm:pt-32 pb-16 sm:pb-24 px-4 sm:px-8 max-w-7xl mx-auto">
       {/* Editorial Header */}
-      <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
+      <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16 space-y-4">
         <div className="inline-flex items-center gap-2 px-3.5 py-1.5 border border-gold/30 bg-gold/5 text-gold text-[10px] tracking-[0.3em] uppercase">
           <Compass className="w-3.5 h-3.5" />
           <span>Curated Immersions</span>
         </div>
-        <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl text-white font-normal tracking-tight">
+        <h1 className="font-serif text-3xl sm:text-5xl lg:text-6xl text-white font-normal tracking-tight">
           Bespoke <span className="gold-gradient-text italic font-normal">Experiences</span>
         </h1>
         <p className="font-serif text-base sm:text-lg text-zinc-300 italic font-light leading-relaxed">
@@ -114,7 +114,7 @@ export const ExperiencesPage = ({ onNavigate, onRequestInvitation }) => {
       </div>
 
       {/* Grid of Experiences with Visual Banners */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-14 sm:mb-20">
         {experiences.map((exp) => {
           const Icon = exp.icon;
           return (
@@ -184,13 +184,13 @@ export const ExperiencesPage = ({ onNavigate, onRequestInvitation }) => {
       </div>
 
       {/* Private Concierge Commission */}
-      <div className="p-8 sm:p-12 border border-gold/40 bg-gradient-to-r from-[#111116] via-brand-card to-black flex flex-col md:flex-row items-center justify-between gap-8">
+      <div className="p-6 sm:p-12 border border-gold/40 bg-gradient-to-r from-[#111116] via-brand-card to-black flex flex-col md:flex-row items-center justify-between gap-6 sm:gap-8">
         <div className="space-y-3 max-w-xl text-center md:text-left">
           <div className="flex items-center justify-center md:justify-start gap-2 text-gold text-xs uppercase tracking-[0.25em]">
             <Shield className="w-4 h-4" />
             <span>Private Concierge Commission</span>
           </div>
-          <h3 className="font-serif text-2xl sm:text-3xl text-white font-normal">
+          <h3 className="font-serif text-xl sm:text-3xl text-white font-normal">
             Commission a Bespoke Private Salon
           </h3>
           <p className="text-xs sm:text-sm text-zinc-300 font-light leading-relaxed">
@@ -199,7 +199,7 @@ export const ExperiencesPage = ({ onNavigate, onRequestInvitation }) => {
         </div>
         <button
           onClick={() => onNavigate('contact')}
-          className="px-8 py-3.5 bg-gold hover:bg-gold-light text-black text-xs uppercase tracking-[0.22em] font-semibold whitespace-nowrap transition-colors shadow-gold-glow"
+          className="w-full md:w-auto px-8 py-3.5 bg-gold hover:bg-gold-light text-black text-xs uppercase tracking-[0.22em] font-semibold whitespace-nowrap transition-colors shadow-gold-glow text-center"
         >
           Commission Concierge
         </button>

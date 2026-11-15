@@ -198,7 +198,7 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#0A0A0C] text-zinc-100 font-sans selection:bg-gold selection:text-black flex flex-col justify-between">
+    <div className="min-h-screen bg-[#0A0A0C] text-zinc-100 font-sans selection:bg-gold selection:text-black flex flex-col justify-between overflow-x-hidden">
       {/* Top Luxury Navbar:
           - Logo: CELEBSO PRIVÉ
           - Center: HOME, GATHERINGS, THE PRIVÉ, THE ROOM, ECOSYSTEM

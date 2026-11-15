@@ -33,15 +33,15 @@ export const GalleryPage = ({ onNavigate, onRequestInvitation }) => {
   ];
 
   return (
-    <div className="pt-32 pb-24 px-6 sm:px-8 max-w-7xl mx-auto">
+    <div className="pt-28 sm:pt-32 pb-16 sm:pb-24 px-4 sm:px-8 max-w-7xl mx-auto">
       {/* Top Editorial Header */}
-      <div className="text-center max-w-3xl mx-auto mb-14 space-y-4">
-        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 border border-gold/30 bg-gold/5 text-gold text-[10px] tracking-[0.3em] uppercase font-mono">
+      <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-14 space-y-3 sm:space-y-4">
+        <div className="inline-flex items-center gap-2 px-3 py-1 sm:px-3.5 sm:py-1.5 border border-gold/30 bg-gold/5 text-gold text-[9px] sm:text-[10px] tracking-[0.3em] uppercase font-mono">
           <Camera className="w-3.5 h-3.5" />
           <span>The Sovereign Chronicle</span>
         </div>
 
-        <h1 className="font-serif text-3xl sm:text-5xl lg:text-6xl text-white font-normal tracking-tight">
+        <h1 className="font-serif text-2xl sm:text-5xl lg:text-6xl text-white font-normal tracking-tight">
           Visual <span className="gold-gradient-text italic font-normal">Gallery & Archives</span>
         </h1>
 
@@ -50,14 +50,14 @@ export const GalleryPage = ({ onNavigate, onRequestInvitation }) => {
         </p>
 
         <div className="flex items-center justify-center gap-3 pt-2">
-          <div className="w-16 h-[1px] bg-gold/40"></div>
+          <div className="w-12 sm:w-16 h-[1px] bg-gold/40"></div>
           <span className="text-gold text-xs">◇</span>
-          <div className="w-16 h-[1px] bg-gold/40"></div>
+          <div className="w-12 sm:w-16 h-[1px] bg-gold/40"></div>
         </div>
       </div>
 
       {/* Clean Grid Gallery — Pure Images Without Text Overlay */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-5 sm:gap-6">
+      <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-3 sm:gap-6">
         {galleryItems.map((item) => (
           <div
             key={item.id}

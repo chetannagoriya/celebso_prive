@@ -5,25 +5,25 @@ import settingToastImg from '../assets/setting-imperial-toast.jpg';
 
 export const TheSettingSection = () => {
   return (
-    <section className="relative py-20 lg:py-28 bg-[#070709] border-t border-white/5 overflow-hidden">
+    <section className="relative py-14 sm:py-20 lg:py-28 bg-[#070709] border-t border-white/5 overflow-hidden">
       {/* Background ambient radial glow */}
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-gold/5 blur-[160px] rounded-full pointer-events-none"></div>
 
-      <div className="relative max-w-7xl mx-auto px-6 sm:px-8">
+      <div className="relative max-w-7xl mx-auto px-5 sm:px-8">
         {/* Top Header Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-[0.9fr_1.1fr] gap-10 lg:gap-16 items-end mb-12 lg:mb-16">
+        <div className="grid grid-cols-1 lg:grid-cols-[0.9fr_1.1fr] gap-8 lg:gap-16 items-end mb-10 lg:mb-16">
           <div>
-            <div className="w-12 h-[1px] bg-gradient-to-r from-transparent via-[#C9A96E] to-transparent mb-7"></div>
-            <p className="text-gold text-[11px] tracking-[0.45em] uppercase font-sans mb-5 font-medium">
+            <div className="w-12 h-[1px] bg-gradient-to-r from-transparent via-[#C9A96E] to-transparent mb-5 sm:mb-7"></div>
+            <p className="text-gold text-[10px] sm:text-[11px] tracking-[0.35em] sm:tracking-[0.45em] uppercase font-sans mb-4 sm:mb-5 font-medium">
               The Setting
             </p>
-            <h2 className="font-serif text-5xl sm:text-7xl lg:text-[5.5rem] font-light text-white leading-[0.96] tracking-tight">
+            <h2 className="font-serif text-3xl sm:text-5xl lg:text-[5.5rem] font-light text-white leading-[1.05] sm:leading-[0.96] tracking-tight">
               Designed for <br />
               <span className="italic text-gold font-normal">consequence.</span>
             </h2>
           </div>
 
-          <p className="font-sans text-base sm:text-lg text-white/50 leading-[1.85] max-w-xl lg:pb-4 font-light">
+          <p className="font-sans text-sm sm:text-base lg:text-lg text-white/50 leading-relaxed sm:leading-[1.85] max-w-xl lg:pb-4 font-light">
             Celebso Privé is a private series of celebrations hosted within one of the country's most exclusive settings. An evening of light entertainment, great company and fantastic ambiance — honoring the catalysts shaping India's future.
           </p>
         </div>
@@ -81,45 +81,45 @@ export const TheSettingSection = () => {
         </div>
 
         {/* 3 Luxury Numbered Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-5">
           {/* Card 01 */}
-          <div className="p-8 sm:p-10 border border-white/10 bg-gradient-to-br from-white/[0.04] to-transparent hover:border-gold/40 transition-all duration-500 relative group overflow-hidden">
+          <div className="p-6 sm:p-10 border border-white/10 bg-gradient-to-br from-white/[0.04] to-transparent hover:border-gold/40 transition-all duration-500 relative group overflow-hidden">
             <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-gold/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-            <p className="relative z-10 text-gold/60 text-[11px] tracking-[0.35em] uppercase font-mono mb-6">
+            <p className="relative z-10 text-gold/60 text-[11px] tracking-[0.35em] uppercase font-mono mb-4 sm:mb-6">
               01
             </p>
-            <h3 className="relative z-10 font-serif text-2xl sm:text-3xl text-white/90 mb-4 group-hover:text-gold transition-colors duration-300">
+            <h3 className="relative z-10 font-serif text-xl sm:text-3xl text-white/90 mb-3 sm:mb-4 group-hover:text-gold transition-colors duration-300">
               The Address
             </h3>
-            <p className="relative z-10 font-sans text-sm text-white/45 leading-relaxed font-light">
+            <p className="relative z-10 font-sans text-xs sm:text-sm text-white/45 leading-relaxed font-light">
               DLF Camellias sets an unmistakable tone: private, rare, composed and quietly powerful.
             </p>
           </div>
 
           {/* Card 02 */}
-          <div className="p-8 sm:p-10 border border-white/10 bg-gradient-to-br from-white/[0.04] to-transparent hover:border-gold/40 transition-all duration-500 relative group overflow-hidden">
+          <div className="p-6 sm:p-10 border border-white/10 bg-gradient-to-br from-white/[0.04] to-transparent hover:border-gold/40 transition-all duration-500 relative group overflow-hidden">
             <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-gold/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-            <p className="relative z-10 text-gold/60 text-[11px] tracking-[0.35em] uppercase font-mono mb-6">
+            <p className="relative z-10 text-gold/60 text-[11px] tracking-[0.35em] uppercase font-mono mb-4 sm:mb-6">
               02
             </p>
-            <h3 className="relative z-10 font-serif text-2xl sm:text-3xl text-white/90 mb-4 group-hover:text-gold transition-colors duration-300">
+            <h3 className="relative z-10 font-serif text-xl sm:text-3xl text-white/90 mb-3 sm:mb-4 group-hover:text-gold transition-colors duration-300">
               The Room
             </h3>
-            <p className="relative z-10 font-sans text-sm text-white/45 leading-relaxed font-light">
+            <p className="relative z-10 font-sans text-xs sm:text-sm text-white/45 leading-relaxed font-light">
               Founders, investors, family office principals, business leaders and operators — each chosen for their contribution to the evening.
             </p>
           </div>
 
           {/* Card 03 */}
-          <div className="p-8 sm:p-10 border border-white/10 bg-gradient-to-br from-white/[0.04] to-transparent hover:border-gold/40 transition-all duration-500 relative group overflow-hidden">
+          <div className="p-6 sm:p-10 border border-white/10 bg-gradient-to-br from-white/[0.04] to-transparent hover:border-gold/40 transition-all duration-500 relative group overflow-hidden">
             <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-gold/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-            <p className="relative z-10 text-gold/60 text-[11px] tracking-[0.35em] uppercase font-mono mb-6">
+            <p className="relative z-10 text-gold/60 text-[11px] tracking-[0.35em] uppercase font-mono mb-4 sm:mb-6">
               03
             </p>
-            <h3 className="relative z-10 font-serif text-2xl sm:text-3xl text-white/90 mb-4 group-hover:text-gold transition-colors duration-300">
+            <h3 className="relative z-10 font-serif text-xl sm:text-3xl text-white/90 mb-3 sm:mb-4 group-hover:text-gold transition-colors duration-300">
               The Evening
             </h3>
-            <p className="relative z-10 font-sans text-sm text-white/45 leading-relaxed font-light">
+            <p className="relative z-10 font-sans text-xs sm:text-sm text-white/45 leading-relaxed font-light">
               An evening of celebration, light entertainment and peer connection in an elegant setting.
             </p>
           </div>

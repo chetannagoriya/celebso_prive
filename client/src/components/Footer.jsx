@@ -18,7 +18,7 @@ export const Footer = ({
       {/* Ambient background gold glow like catalyst */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[200px] bg-gold/5 rounded-full blur-[140px] pointer-events-none"></div>
 
-      <div className="relative max-w-7xl mx-auto px-6 pt-14 md:pt-20 pb-8 md:pb-10">
+      <div className="relative max-w-7xl mx-auto px-5 sm:px-6 pt-12 md:pt-20 pb-8 md:pb-10">
         {/* Mobile Brand Block (Catalyst style: centered on mobile, hidden on lg) */}
         <div className="flex flex-col items-center text-center lg:hidden mb-10">
           <button
@@ -84,7 +84,7 @@ export const Footer = ({
         </div>
 
         {/* 5-Column Grid Layout (Catalyst style: 1.3fr 1fr 1fr 1fr 1.2fr) */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-[1.3fr_1fr_1fr_1fr_1.2fr] gap-8 lg:gap-8 mb-12 md:mb-16">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-[1.3fr_1fr_1fr_1fr_1.2fr] gap-6 sm:gap-8 mb-10 md:mb-16">
           {/* Col 1: Desktop Brand (hidden on mobile, flex on lg) */}
           <div className="hidden lg:flex flex-col items-start text-left">
             <button

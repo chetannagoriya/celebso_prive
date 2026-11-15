@@ -76,14 +76,14 @@ export const RequestInvitationPage = ({ onNavigate }) => {
   };
 
   return (
-    <div className="pt-32 pb-24 px-6 sm:px-8 max-w-5xl mx-auto">
+    <div className="pt-28 sm:pt-32 pb-16 sm:pb-24 px-4 sm:px-8 max-w-5xl mx-auto">
       {/* Editorial Header */}
-      <div className="text-center max-w-2xl mx-auto mb-16 space-y-4">
+      <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-16 space-y-4">
         <div className="inline-flex items-center gap-2 px-3 py-1 border border-gold/30 bg-gold/5 text-gold text-[10px] tracking-[0.3em] uppercase">
           <Key className="w-3.5 h-3.5" />
           <span>Sovereign Petition</span>
         </div>
-        <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl text-white font-light tracking-wide">
+        <h1 className="font-serif text-3xl sm:text-5xl lg:text-6xl text-white font-light tracking-wide">
           Request <span className="gold-metallic-text italic">Invitation</span>
         </h1>
         <p className="font-serif text-base sm:text-lg text-zinc-300 italic font-light leading-relaxed">
@@ -92,12 +92,12 @@ export const RequestInvitationPage = ({ onNavigate }) => {
       </div>
 
       {submitted ? (
-        <div className="border border-gold bg-gradient-to-b from-[#16161D] via-brand-card to-black p-10 sm:p-16 text-center space-y-6 shadow-gold-glow">
+        <div className="border border-gold bg-gradient-to-b from-[#16161D] via-brand-card to-black p-6 sm:p-14 lg:p-16 text-center space-y-6 shadow-gold-glow">
           <div className="w-16 h-16 rounded-full border border-gold flex items-center justify-center text-gold mx-auto bg-gold/10">
             <CheckCircle2 className="w-8 h-8" />
           </div>
           <div className="space-y-2">
-            <h2 className="font-serif text-3xl sm:text-4xl text-white">
+            <h2 className="font-serif text-2xl sm:text-4xl text-white">
               Petition Formally Transmitted
             </h2>
             <p className="text-xs uppercase tracking-[0.25em] text-gold font-mono">
@@ -111,14 +111,14 @@ export const RequestInvitationPage = ({ onNavigate }) => {
           <div className="pt-6">
             <button
               onClick={() => onNavigate('home')}
-              className="px-8 py-3 border border-gold text-gold hover:bg-gold hover:text-black text-xs uppercase tracking-[0.22em] transition-colors"
+              className="w-full sm:w-auto px-8 py-3 border border-gold text-gold hover:bg-gold hover:text-black text-xs uppercase tracking-[0.22em] transition-colors"
             >
               Return to Sovereign Sanctum
             </button>
           </div>
         </div>
       ) : (
-        <div className="border border-gold/30 bg-brand-card p-8 sm:p-14 shadow-gold-glow">
+        <div className="border border-gold/30 bg-brand-card p-5 sm:p-10 lg:p-14 shadow-gold-glow">
           <div className="flex items-center justify-between pb-6 mb-8 border-b border-white/10">
             <div className="flex items-center gap-2 text-xs uppercase tracking-[0.2em] text-gold">
               <Lock className="w-4 h-4" />

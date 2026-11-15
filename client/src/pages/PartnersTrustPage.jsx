@@ -102,11 +102,11 @@ export const PartnersTrustPage = ({ onNavigate, onOpenPartnerModal }) => {
   return (
     <div className="bg-[#0A0A0C] text-zinc-100 min-h-screen selection:bg-gold selection:text-black">
       {/* 1. Hero / Editorial Header */}
-      <section className="relative pt-36 pb-20 sm:pb-24 border-b border-white/5 overflow-hidden">
+      <section className="relative pt-28 sm:pt-36 pb-16 sm:pb-24 border-b border-white/5 overflow-hidden">
         {/* Ambient subtle backlight */}
         <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-gold/5 blur-[120px] rounded-full pointer-events-none"></div>
 
-        <div className="max-w-4xl mx-auto px-6 sm:px-8 text-center space-y-6 relative z-10">
+        <div className="max-w-4xl mx-auto px-5 sm:px-8 text-center space-y-5 sm:space-y-6 relative z-10">
           {/* Eyebrow */}
           <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 border border-gold/30 bg-gold/5 text-gold text-[10px] sm:text-[11px] tracking-[0.3em] uppercase font-semibold">
             <Shield className="w-3.5 h-3.5 text-gold" />
@@ -114,28 +114,28 @@ export const PartnersTrustPage = ({ onNavigate, onOpenPartnerModal }) => {
           </div>
 
           {/* Main Title */}
-          <h1 className="font-serif text-4xl sm:text-6xl lg:text-7xl text-white font-normal tracking-tight leading-[1.08]">
+          <h1 className="font-serif text-3xl sm:text-6xl lg:text-7xl text-white font-normal tracking-tight leading-[1.1]">
             Partners & <span className="gold-metallic-text italic">Trust</span>
           </h1>
 
           {/* Curated Pullquote */}
-          <blockquote className="max-w-3xl mx-auto py-3">
-            <p className="font-serif text-lg sm:text-2xl text-zinc-200 italic font-light leading-relaxed">
+          <blockquote className="max-w-3xl mx-auto py-2 sm:py-3">
+            <p className="font-serif text-base sm:text-2xl text-zinc-200 italic font-light leading-relaxed">
               “Strong ecosystems are built on trust, shared ambition, and meaningful collaboration. Celebso Privé brings founders, investors, and strategic partners together to create opportunities that extend beyond a single gathering.”
             </p>
           </blockquote>
 
           {/* Action CTAs */}
-          <div className="pt-4 flex items-center justify-center gap-4">
+          <div className="pt-3 sm:pt-4 flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 sm:gap-4 w-full sm:w-auto">
             <a
               href="#partner-inquiry"
-              className="bg-gold hover:bg-gold-light text-[#0A0A0C] px-8 py-3.5 text-xs uppercase tracking-[0.24em] font-semibold transition-all duration-300 shadow-gold-glow"
+              className="bg-gold hover:bg-gold-light text-[#0A0A0C] px-8 py-3.5 text-xs uppercase tracking-[0.24em] font-semibold transition-all duration-300 shadow-gold-glow text-center"
             >
               Explore Partnership
             </a>
             <button
               onClick={() => onNavigate('gatherings')}
-              className="border border-white/20 hover:border-gold text-zinc-300 hover:text-gold px-7 py-3.5 text-xs uppercase tracking-[0.22em] font-medium transition-colors"
+              className="border border-white/20 hover:border-gold text-zinc-300 hover:text-gold px-7 py-3.5 text-xs uppercase tracking-[0.22em] font-medium transition-colors text-center"
             >
               View Conclaves
             </button>
@@ -144,9 +144,9 @@ export const PartnersTrustPage = ({ onNavigate, onOpenPartnerModal }) => {
       </section>
 
       {/* 2. BUILDING PARTNERSHIPS THAT MATTER */}
-      <section className="py-20 sm:py-28 border-b border-white/5 bg-[#08080A]">
-        <div className="max-w-4xl mx-auto px-6 sm:px-8">
-          <div className="border border-gold/30 bg-gradient-to-b from-[#121217] via-[#0E0E12] to-black p-8 sm:p-14 lg:p-16 shadow-2xl relative overflow-hidden">
+      <section className="py-14 sm:py-24 border-b border-white/5 bg-[#08080A]">
+        <div className="max-w-4xl mx-auto px-5 sm:px-8">
+          <div className="border border-gold/30 bg-gradient-to-b from-[#121217] via-[#0E0E12] to-black p-6 sm:p-14 lg:p-16 shadow-2xl relative overflow-hidden">
             <div className="absolute top-0 right-0 w-48 h-48 bg-gold/5 rounded-full blur-3xl pointer-events-none"></div>
 
             <div className="space-y-6 relative z-10 text-center sm:text-left">

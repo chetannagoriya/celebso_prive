@@ -62,11 +62,11 @@ export const TheRoomPage = ({ onNavigate, onRequestInvitation }) => {
   return (
     <div className="bg-[#0A0A0C] text-zinc-100 min-h-screen selection:bg-gold selection:text-black">
       {/* 1. Hero / Editorial Header */}
-      <section className="relative pt-36 pb-20 sm:pb-24 border-b border-white/5 overflow-hidden">
+      <section className="relative pt-28 sm:pt-36 pb-14 sm:pb-24 border-b border-white/5 overflow-hidden">
         {/* Subtle background ambient glow */}
         <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-gold/5 blur-[120px] rounded-full pointer-events-none"></div>
 
-        <div className="max-w-4xl mx-auto px-6 sm:px-8 text-center space-y-6 relative z-10">
+        <div className="max-w-4xl mx-auto px-5 sm:px-8 text-center space-y-5 sm:space-y-6 relative z-10">
           {/* Eyebrow */}
           <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 border border-gold/30 bg-gold/5 text-gold text-[10px] sm:text-[11px] tracking-[0.3em] uppercase font-semibold">
             <Lock className="w-3.5 h-3.5 text-gold" />
@@ -74,28 +74,28 @@ export const TheRoomPage = ({ onNavigate, onRequestInvitation }) => {
           </div>
 
           {/* Main Title */}
-          <h1 className="font-serif text-4xl sm:text-6xl lg:text-7xl text-white font-normal tracking-tight leading-[1.08]">
+          <h1 className="font-serif text-3xl sm:text-6xl lg:text-7xl text-white font-normal tracking-tight leading-[1.08]">
             The <span className="gold-metallic-text italic">Room</span>
           </h1>
 
           {/* Pullquote */}
-          <blockquote className="max-w-3xl mx-auto py-3">
-            <p className="font-serif text-lg sm:text-2xl text-zinc-200 italic font-light leading-relaxed">
+          <blockquote className="max-w-3xl mx-auto py-2 sm:py-3">
+            <p className="font-serif text-base sm:text-2xl text-zinc-200 italic font-light leading-relaxed">
               “An intimate setting where founders, investors, and business leaders come together to exchange ideas, build trust, and shape meaningful opportunities — beyond titles and transactions.”
             </p>
           </blockquote>
 
           {/* Action CTAs */}
-          <div className="pt-4 flex items-center justify-center gap-4">
+          <div className="pt-3 sm:pt-4 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 w-full sm:w-auto">
             <button
               onClick={onRequestInvitation}
-              className="bg-gold hover:bg-gold-light text-[#0A0A0C] px-8 py-3.5 text-xs uppercase tracking-[0.24em] font-semibold transition-all duration-300 shadow-gold-glow"
+              className="w-full sm:w-auto bg-gold hover:bg-gold-light text-[#0A0A0C] px-8 py-3.5 text-xs uppercase tracking-[0.24em] font-semibold transition-all duration-300 shadow-gold-glow text-center"
             >
               Request Seat Ingress
             </button>
             <button
               onClick={() => onNavigate('gatherings')}
-              className="border border-white/20 hover:border-gold text-zinc-300 hover:text-gold px-7 py-3.5 text-xs uppercase tracking-[0.22em] font-medium transition-colors"
+              className="w-full sm:w-auto border border-white/20 hover:border-gold text-zinc-300 hover:text-gold px-7 py-3.5 text-xs uppercase tracking-[0.22em] font-medium transition-colors text-center"
             >
               Explore Gatherings
             </button>
@@ -104,15 +104,15 @@ export const TheRoomPage = ({ onNavigate, onRequestInvitation }) => {
       </section>
 
       {/* 2. THE PHYSICAL GEOMETRY OF CONNECTION */}
-      <section className="py-20 sm:py-28 border-b border-white/5 bg-[#08080A]">
-        <div className="max-w-6xl mx-auto px-6 sm:px-8">
-          <div className="border border-gold/30 bg-gradient-to-b from-[#121217] via-[#0E0E12] to-black p-8 sm:p-12 lg:p-14 shadow-2xl relative overflow-hidden">
+      <section className="py-14 sm:py-20 lg:py-28 border-b border-white/5 bg-[#08080A]">
+        <div className="max-w-6xl mx-auto px-5 sm:px-8">
+          <div className="border border-gold/30 bg-gradient-to-b from-[#121217] via-[#0E0E12] to-black p-5 sm:p-12 lg:p-14 shadow-2xl relative overflow-hidden">
             {/* Ambient accent */}
             <div className="absolute top-0 right-0 w-48 h-48 bg-gold/5 rounded-full blur-3xl pointer-events-none"></div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center relative z-10">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center relative z-10">
               {/* Left Column: Real Photo of The Non-Hierarchical Circle (5 cols) */}
-              <div className="lg:col-span-5 relative overflow-hidden aspect-[4/5] border border-white/10 shadow-2xl group bg-black/60">
+              <div className="lg:col-span-5 relative overflow-hidden aspect-[4/3] sm:aspect-[4/5] border border-white/10 shadow-2xl group bg-black/60">
                 <img
                   src={theRoomSessionImg || '/room-assembly-circle.jpg'}
                   alt="The Room - An intimate non-hierarchical gathering"
@@ -138,7 +138,7 @@ export const TheRoomPage = ({ onNavigate, onRequestInvitation }) => {
                     <span className="w-5 h-[1px] bg-gold"></span>
                   </div>
 
-                  <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-white font-normal leading-tight">
+                  <h2 className="font-serif text-2xl sm:text-4xl lg:text-5xl text-white font-normal leading-tight">
                     The Non-Hierarchical Round
                   </h2>
 

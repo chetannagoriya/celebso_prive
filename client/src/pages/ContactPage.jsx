@@ -67,39 +67,39 @@ export const ContactPage = ({ onNavigate, onOpenDashboard }) => {
   };
 
   return (
-    <div className="pt-32 pb-24 px-6 sm:px-8 max-w-7xl mx-auto">
+    <div className="pt-28 sm:pt-32 pb-16 sm:pb-24 px-4 sm:px-8 max-w-7xl mx-auto">
       {/* Editorial Header */}
-      <div className="text-center max-w-3xl mx-auto mb-20 space-y-5">
+      <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-20 space-y-4 sm:space-y-5">
         <div className="inline-flex items-center gap-2 px-3 py-1 border border-gold/30 bg-gold/5 text-gold text-[10px] tracking-[0.3em] uppercase">
           <Shield className="w-3.5 h-3.5" />
           <span>Private Concierge</span>
         </div>
-        <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl text-white font-light tracking-wide">
+        <h1 className="font-serif text-3xl sm:text-5xl lg:text-6xl text-white font-light tracking-wide">
           Discrete <span className="gold-metallic-text italic">Contact</span>
         </h1>
-        <p className="font-serif text-lg sm:text-xl text-zinc-300 italic font-light leading-relaxed">
+        <p className="font-serif text-base sm:text-xl text-zinc-300 italic font-light leading-relaxed">
           “Direct encrypted communiqués to the High Advisory Secretariat and our global chapter desks.”
         </p>
       </div>
 
       {/* Global Chapter Desks Grid */}
-      <div className="mb-20 space-y-6">
+      <div className="mb-14 sm:mb-20 space-y-6">
         <div className="text-center space-y-2">
           <p className="text-[10px] uppercase tracking-[0.25em] text-gold font-medium">Permanent Secretariats</p>
-          <h2 className="font-serif text-3xl text-white">Global Chapter Desks</h2>
+          <h2 className="font-serif text-2xl sm:text-3xl text-white">Global Chapter Desks</h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           {desks.map((d, i) => (
             <div
               key={i}
-              className="p-8 bg-brand-card border border-white/10 hover:border-gold/40 transition-all space-y-4"
+              className="p-5 sm:p-8 bg-brand-card border border-white/10 hover:border-gold/40 transition-all space-y-4"
             >
               <div>
                 <span className="text-[9px] uppercase tracking-[0.25em] text-gold font-mono block mb-1">
                   {d.desk}
                 </span>
-                <h3 className="font-serif text-2xl text-white font-medium">
+                <h3 className="font-serif text-xl sm:text-2xl text-white font-medium">
                   {d.city}
                 </h3>
                 <p className="text-xs text-zinc-400 font-light">{d.country}</p>
@@ -112,7 +112,7 @@ export const ContactPage = ({ onNavigate, onOpenDashboard }) => {
                 </p>
                 <p className="flex items-center gap-2">
                   <Mail className="w-3.5 h-3.5 text-gold flex-shrink-0" />
-                  <span className="font-mono text-zinc-400">{d.email}</span>
+                  <span className="font-mono text-zinc-400 break-all">{d.email}</span>
                 </p>
                 <p className="flex items-center gap-2">
                   <Phone className="w-3.5 h-3.5 text-gold flex-shrink-0" />
@@ -125,9 +125,9 @@ export const ContactPage = ({ onNavigate, onOpenDashboard }) => {
       </div>
 
       {/* Encrypted Communiqué Form & Advisory Box */}
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
         {/* Left Form */}
-        <div className="lg:col-span-8 p-8 sm:p-12 border border-gold/40 bg-brand-card shadow-gold-glow">
+        <div className="lg:col-span-8 p-5 sm:p-10 lg:p-12 border border-gold/40 bg-brand-card shadow-gold-glow">
           <div className="space-y-2 mb-8">
             <div className="flex items-center gap-2 text-gold text-xs uppercase tracking-[0.2em]">
               <Lock className="w-4 h-4" />
